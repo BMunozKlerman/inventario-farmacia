@@ -31,7 +31,7 @@ delivery_id: string   # e.g. "E1"; if omitted, derive it from the filename
 
 ```yaml
 com: CanvasObjectModel   # the only output — full schema in references/com-schema.md
-com_path: string         # where the COM was persisted, e.g. "com/E1/architectural-context.json"
+com_path: string         # where the COM was persisted, e.g. "com/E1-architectural_context-p2.json"
 clarifications: [ string ]
 ```
 
@@ -78,9 +78,11 @@ of scope for this skill.
 7. **Assemble and emit the COM.** Follow the schema and field-by-field
    notes in `references/com-schema.md` — read it before writing the first
    COM of a session, and whenever a field's shape is unclear.
-8. **Persist the COM.** Write the assembled COM as JSON to
-   `com/<delivery_id>/architectural-context.json`, creating the directory
-   if it doesn't exist yet. Report that path as `com_path` in the output.
+8. **Persist the COM.** Write the assembled COM as JSON to a flat file
+   directly under `com/` — no per-delivery subfolder — named
+   `com/<delivery_id>-architectural_context-p<n>.json`, where `<n>` is the
+   page number from the `source` field (`p1` if the input is a single
+   image). Report that path as `com_path` in the output.
 
 ## guardrails
 
@@ -95,8 +97,13 @@ of scope for this skill.
 - A canvas whose title doesn't match "Architectural Context Canvas" →
   `out_of_scope` clarification, stop immediately, emit no COM.
 - Never persist the COM anywhere other than
-  `com/<delivery_id>/architectural-context.json` — a fixed, predictable
-  path the downstream mapping skill depends on.
+  `com/<delivery_id>-architectural_context-p<n>.json` — a flat filename
+  directly under `com/`, with no per-delivery subfolder, that downstream
+  mapping and orchestration skills depend on.
+- Never generate an ingest report or a page index (e.g. `<delivery_id>-
+  ingest-report.md`, `<delivery_id>-page-index.json`) — those are
+  produced by a separate orchestration skill that aggregates all canvases
+  in a delivery, not by this one.
 
 ## acceptance
 
@@ -106,8 +113,9 @@ of scope for this skill.
 - no sticky text differs from what is printed on the canvas
 - if the canvas type doesn't match, the output is a single out_of_scope
   clarification and no COM is produced
-- the COM is persisted at `com/<delivery_id>/architectural-context.json`
-  and `com_path` in the output matches that path
+- the COM is persisted as a flat file at
+  `com/<delivery_id>-architectural_context-p<n>.json` (no subfolder) and
+  `com_path` in the output matches that path
 ```
 
 ## Reference files
@@ -125,8 +133,10 @@ of scope for this skill.
 ## Fit in the pipeline
 
 This is the Stage A ingestion step, scoped to Architectural Context
-Canvases only. Its output (the COM), persisted at
-`com/<delivery_id>/architectural-context.json`, is the sole input for a
-separate mapping skill that applies the rules in
+Canvases only. Its output (the COM), persisted as a flat file at
+`com/<delivery_id>-architectural_context-p<n>.json`, is the sole input
+for a separate mapping skill that applies the rules in
 `references/rewriting-rules.md` to produce `constitution.md` and
 `spec.md` fragments. This skill never produces that mapped text itself.
+Companion delivery-level artifacts (an ingest report, a page index) are
+produced by a separate orchestration skill, not by this one.
