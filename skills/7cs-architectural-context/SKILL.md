@@ -31,6 +31,7 @@ delivery_id: string   # e.g. "E1"; if omitted, derive it from the filename
 
 ```yaml
 com: CanvasObjectModel   # the only output — full schema in references/com-schema.md
+com_path: string         # where the COM was persisted, e.g. "com/E1/architectural-context.json"
 clarifications: [ string ]
 ```
 
@@ -77,6 +78,9 @@ of scope for this skill.
 7. **Assemble and emit the COM.** Follow the schema and field-by-field
    notes in `references/com-schema.md` — read it before writing the first
    COM of a session, and whenever a field's shape is unclear.
+8. **Persist the COM.** Write the assembled COM as JSON to
+   `com/<delivery_id>/architectural-context.json`, creating the directory
+   if it doesn't exist yet. Report that path as `com_path` in the output.
 
 ## guardrails
 
@@ -90,6 +94,9 @@ of scope for this skill.
   <section>]`, never a guessed transcription.
 - A canvas whose title doesn't match "Architectural Context Canvas" →
   `out_of_scope` clarification, stop immediately, emit no COM.
+- Never persist the COM anywhere other than
+  `com/<delivery_id>/architectural-context.json` — a fixed, predictable
+  path the downstream mapping skill depends on.
 
 ## acceptance
 
@@ -99,6 +106,8 @@ of scope for this skill.
 - no sticky text differs from what is printed on the canvas
 - if the canvas type doesn't match, the output is a single out_of_scope
   clarification and no COM is produced
+- the COM is persisted at `com/<delivery_id>/architectural-context.json`
+  and `com_path` in the output matches that path
 ```
 
 ## Reference files
@@ -116,7 +125,8 @@ of scope for this skill.
 ## Fit in the pipeline
 
 This is the Stage A ingestion step, scoped to Architectural Context
-Canvases only. Its output (the COM) is the sole input for a separate
-mapping skill that applies the rules in `references/rewriting-rules.md`
-to produce `constitution.md` and `spec.md` fragments. This skill never
-produces that mapped text itself.
+Canvases only. Its output (the COM), persisted at
+`com/<delivery_id>/architectural-context.json`, is the sole input for a
+separate mapping skill that applies the rules in
+`references/rewriting-rules.md` to produce `constitution.md` and
+`spec.md` fragments. This skill never produces that mapped text itself.
