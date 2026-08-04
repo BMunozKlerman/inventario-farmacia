@@ -1,0 +1,101 @@
+{
+  "source": "[TDS DIS 2026] Equipo 2.pdf#p2",
+  "canvas": "architectural_context",
+  "template": "7Cs v1.1 June 2026",
+  "delivery_id": "E1",
+  "header": {
+    "system": null,
+    "organization": null,
+    "canvas": null,
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Stakeholders",
+      "stickies": [
+        { "id": "ACC-ST-01", "text": "QF DT", "bbox": [35,130,88,210], "parent": null },
+        { "id": "ACC-ST-02", "text": "QF Complemetario", "bbox": [110,145,222,195], "parent": null },
+        { "id": "ACC-ST-03", "text": "Auxiliar de Farmacia", "bbox": [258,150,315,210], "parent": null },
+        { "id": "ACC-ST-04", "text": "Bodeguero", "bbox": [335,155,388,205], "parent": null },
+        { "id": "ACC-ST-05", "text": "Laboratorio / Drogueria", "bbox": [428,150,490,205], "parent": null },
+        { "id": "ACC-ST-06", "text": "SEREMI", "bbox": [512,155,562,205], "parent": null },
+        { "id": "ACC-ST-07", "text": "ISP", "bbox": [590,155,640,210], "parent": null },
+        { "id": "ACC-ST-08", "text": "Cliente", "bbox": [670,160,735,205], "parent": null },
+        { "id": "ACC-ST-09", "text": "MINSAL", "bbox": [757,160,808,205], "parent": null },
+        { "id": "ACC-ST-10", "text": "Empresa externa certificada (destrucción de productos controlados)", "bbox": [840,140,942,215], "parent": null }
+      ]
+    },
+    {
+      "name": "Business strategy",
+      "stickies": [
+        { "id": "ACC-BS-01", "text": "Resolver el problema de inventario", "bbox": [40,290,113,355], "parent": null },
+        { "id": "ACC-BS-02", "text": "Prevenir Quiebre de Stock", "bbox": [122,290,175,355], "parent": null },
+        { "id": "ACC-BS-03", "text": "Minimizar Merma", "bbox": [200,300,253,355], "parent": null }
+      ]
+    },
+    {
+      "name": "IT strategy",
+      "stickies": [
+        { "id": "ACC-IT-01", "text": "Plataforma web responsivo", "bbox": [893,285,988,360], "parent": null },
+        { "id": "ACC-IT-02", "text": "Integración con el POS", "bbox": [1027,285,1128,360], "parent": null }
+      ]
+    },
+    {
+      "name": "Business goals & drivers",
+      "stickies": [
+        { "id": "ACC-BG-01", "text": "Reducción de pérdidas económicas por merma", "bbox": [40,445,158,515], "parent": null },
+        { "id": "ACC-BG-02", "text": "Maximización de ventas disponibles", "bbox": [168,440,283,515], "parent": null },
+        { "id": "ACC-BG-03", "text": "Eficiencia operativa", "bbox": [313,450,363,510], "parent": null }
+      ]
+    },
+    {
+      "name": "Technology goals & drivers",
+      "stickies": [
+        { "id": "ACC-TG-01", "text": "Reducir errores derivados del registro manual/paralelo", "bbox": [893,445,1010,515], "parent": null },
+        { "id": "ACC-TG-02", "text": "Eliminar la doble digitación entre POS e inventario", "bbox": [1030,440,1140,515], "parent": null }
+      ]
+    },
+    {
+      "name": "Business standards & policies",
+      "stickies": [
+        { "id": "ACC-BP-01", "text": "Norma Técnica N°147", "bbox": [83,598,140,668], "parent": null },
+        { "id": "ACC-BP-02", "text": "Decreto Supremo N°404, 405, 466", "bbox": [193,598,258,668], "parent": null },
+        { "id": "ACC-BP-03", "text": "Exigencia del ISP de llevar libro de control físico para productos controlados", "bbox": [320,590,420,680], "parent": null },
+        { "id": "ACC-BP-04", "text": "Fiscalización y normativa aplicada por MINSAL, SEREMI, ISP", "bbox": [453,585,528,675], "parent": null },
+        { "id": "ACC-BP-05", "text": "Autorización ISP de destrucción de productos controlados", "bbox": [563,590,633,675], "parent": null }
+      ]
+    },
+    {
+      "name": "Technology standards & policies",
+      "stickies": [
+        { "id": "ACC-TP-01", "text": "APIs para que el POS registre transacciones (venta, notas de crédito, entre otras) y consulte stock disponible", "bbox": [893,595,1030,690], "parent": null }
+      ]
+    },
+    {
+      "name": "Situational constraints",
+      "stickies": [
+        { "id": "ACC-SC-01", "text": "Un solo local", "bbox": [83,745,138,825], "parent": null },
+        { "id": "ACC-SC-02", "text": "Sin integración con proveedores externos", "bbox": [163,745,265,825], "parent": null },
+        { "id": "ACC-SC-03", "text": "Los registros de transacciones, una vez emitidos, no se pueden modificar ni alterar", "bbox": [278,745,405,825], "parent": null },
+        { "id": "ACC-SC-04", "text": "Personal no técnico operando el sistema.", "bbox": [452,745,530,825], "parent": null },
+        { "id": "ACC-SC-05", "text": "Autorización ISP y ejecución de destrucción por empresa externa certificada", "bbox": [575,738,690,825], "parent": null }
+      ]
+    },
+    {
+      "name": "Business principles",
+      "stickies": [
+        { "id": "ACC-BPR-01", "text": "Trazabilidad completa de los productos", "bbox": [58,905,175,975], "parent": null }
+      ]
+    },
+    {
+      "name": "Technical principles",
+      "stickies": [
+        { "id": "ACC-TPR-01", "text": "Sistema intuitivo", "bbox": [925,910,978,975], "parent": null },
+        { "id": "ACC-TPR-02", "text": "Integridad de los registros", "bbox": [1030,910,1085,975], "parent": null },
+        { "id": "ACC-TPR-03", "text": "no alteración de registros de transacciones una vez emitidos.", "bbox": [1102,905,1200,975], "parent": null }
+      ]
+    }
+  ],
+  "empty_sections": []
+}
