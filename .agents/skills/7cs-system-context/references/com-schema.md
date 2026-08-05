@@ -59,7 +59,7 @@ also has a short code used in sticky ids as `SCC-<code>-<n>`.
 
 ```json
 {
-  "source": "system-context.pdf#p1",
+  "source": "<delivery>.pdf#p<N>",
   "canvas": "system_context",
   "template": "7Cs v1.1 June 2026",
   "delivery_id": "E1",
