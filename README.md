@@ -31,15 +31,25 @@ integration; controlled-substance tracking).
   Source/Data input/Data output/Target, 16 sections) from a PDF or image and
   converts it into a COM. Same ingestion-only contract as the
   architectural-context skill. See `.agents/skills/7cs-system-context/SKILL.md`.
+- **`.agents/skills/7cs-deployment/`** — the delivery carries exactly one
+  Deployment Canvas, so this skill does both stages in one `SKILL.md`.
+  Phase 1 reads the canvas (7Cs, fixed 15-section template in three
+  columns) from a PDF or image and converts it into a COM, with the same
+  "no interpretation" contract as the other ingestion skills. Phase 2
+  reads only that COM and emits the `NFR-OP-n` operation requirements for
+  `/speckit.specify` plus the technical context, packaging and topology
+  blocks for `/speckit.plan`, and the non-negotiable limits for
+  `constitution.md`. ~90% of this canvas belongs in `plan.md`, not
+  `spec.md`. See `.agents/skills/7cs-deployment/SKILL.md`.
 - **`com/`** — Canvas Object Models (JSON) persisted by the ingestion
   skills, one flat file per canvas: `<delivery_id>-<canvas>-p<n>.json`.
   Currently holds one processed Architectural Context page
-  (`E1-architectural_context-p2.json`) and one processed System Context
-  page (`E1-system_context-p1.json`).
+  (`E1-architectural_context-p2.json`), one processed System Context page
+  (`E1-system_context-p1.json`), and one processed Deployment page
+  (`E1-deployment-p6.json`).
 - **`CLAUDE.md`** — repository guidelines (structure, naming conventions,
   commit style) for agents working in this repo.
 
-More canvas skills (Business Context, Structural, Deployment) and the
-downstream mapping/orchestration/audit skills, plus the `mapping/`,
-`composed/`, `audit/`, and `evidence/` stages of the pipeline, are planned
-but not yet built.
+More canvas skills (Business Context, Structural) and the downstream
+orchestration/audit skills, plus the `mapping/`, `composed/`, `audit/`,
+and `evidence/` stages of the pipeline, are planned but not yet built.

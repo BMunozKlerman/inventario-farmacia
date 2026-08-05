@@ -1,0 +1,101 @@
+{
+  "source": "[TDS DIS 2026] Equipo 2.pdf#p6",
+  "canvas": "deployment",
+  "template": "7Cs v1.1 June 2026",
+  "delivery_id": "E1",
+  "header": {
+    "system": null,
+    "organization": null,
+    "canvas": null,
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Environments",
+      "stickies": [
+        { "id": "DPC-EN-01", "text": "Desarrollo", "bbox": [26,133,105,213], "parent": null },
+        { "id": "DPC-EN-02", "text": "Producción", "bbox": [27,232,105,311], "parent": null }
+      ]
+    },
+    {
+      "name": "Bundles",
+      "stickies": [
+        { "id": "DPC-BU-01", "text": "Frontend: SPA (aplicación web con diseño responsivo)", "bbox": [251,79,375,150], "parent": null },
+        { "id": "DPC-BU-02", "text": "Backend: monolito (Node.js)", "bbox": [423,86,537,151], "parent": null }
+      ]
+    },
+    {
+      "name": "Middleware",
+      "stickies": [
+        { "id": "DPC-MW-01", "text": "Cloud SQL for PostgreSQL", "bbox": [250,162,351,218], "parent": null }
+      ]
+    },
+    {
+      "name": "Runtime",
+      "stickies": [
+        { "id": "DPC-RT-01", "text": "Node.js", "bbox": [265,231,320,286], "parent": null }
+      ]
+    },
+    {
+      "name": "Orchestration & scheduling",
+      "stickies": [
+        { "id": "DPC-OR-01", "text": "Cloud Run (backend)", "bbox": [342,307,447,366], "parent": null },
+        { "id": "DPC-OR-02", "text": "Cloud Scheduler (Jobs)", "bbox": [472,307,573,363], "parent": null }
+      ]
+    },
+    {
+      "name": "Container runtimes",
+      "stickies": [
+        { "id": "DPC-CR-01", "text": "Docker", "bbox": [318,378,374,434], "parent": null },
+        { "id": "DPC-CR-02", "text": "GCP: Cloud Run, Cloud SQL, Cloud Scheduler, Cloud Storage", "bbox": [402,377,521,444], "parent": null }
+      ]
+    },
+    {
+      "name": "Operating systems",
+      "stickies": []
+    },
+    {
+      "name": "Virtualization engines",
+      "stickies": []
+    },
+    {
+      "name": "Cloud abstractions",
+      "stickies": []
+    },
+    {
+      "name": "Hardware",
+      "stickies": []
+    },
+    {
+      "name": "Locations",
+      "stickies": []
+    },
+    {
+      "name": "Networks",
+      "stickies": [
+        { "id": "DPC-NW-01", "text": "Acceso vía HTTPS", "bbox": [1069,176,1152,261], "parent": null }
+      ]
+    },
+    {
+      "name": "Installation",
+      "stickies": [
+        { "id": "DPC-IN-01", "text": "Despliegue en GCP a cargo del equipo de desarrollo/implementación", "bbox": [1237,167,1359,291], "parent": null }
+      ]
+    },
+    {
+      "name": "Operation",
+      "stickies": [
+        { "id": "DPC-OP-01", "text": "Soporte y operación en producción a cargo de personal de soporte del cliente", "bbox": [1237,503,1367,634], "parent": null }
+      ]
+    },
+    {
+      "name": "Constraints",
+      "stickies": [
+        { "id": "DPC-CO-01", "text": "Inmutabilidad de registros de transacciones", "bbox": [30,477,135,536], "parent": null },
+        { "id": "DPC-CO-02", "text": "Sin soporte offline", "bbox": [30,583,135,642], "parent": null }
+      ]
+    }
+  ],
+  "empty_sections": []
+}
