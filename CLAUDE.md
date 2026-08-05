@@ -3,10 +3,13 @@
 ## Project Structure & Module Organization
 
 This repository is building a 7Cs-to-Spec Kit documentation pipeline. The
-ingestion stage (Etapa A) covers three canvas types — Architectural
-Context, System Context, and Functional — and one mapping skill
-(`7cs-functional-B`, Etapa B) consumes the Functional COM to emit
-FRs for `/speckit.specify` and stack for `/speckit.plan`.
+ingestion stage (Etapa A) covers four canvas types — Architectural
+Context, System Context, Functional, and Deployment. Mapping (Etapa B) is
+covered by `7cs-functional-B`, which consumes the Functional COM to emit
+FRs for `/speckit.specify` and stack for `/speckit.plan`, and by
+`7cs-deployment`, which is a single skill with two internal phases
+(ingestion + mapping) because the delivery carries exactly one Deployment
+Canvas.
 
 - `resources/`: original delivery PDFs; treat as immutable source material.
 - `.agents/skills/7cs-architectural-context/`: ingests a PDF page or image of an
@@ -29,6 +32,19 @@ FRs for `/speckit.specify` and stack for `/speckit.plan`.
   (planned) structural skill, and emits per-bundle FRs with
   `Dado/Cuando/Entonces` scenarios, `§Key Entities`, and plan stack.
   Never produces a COM.
+- `.agents/skills/7cs-deployment/`: the only single-skill canvas in the
+  repo — the delivery has exactly one Deployment Canvas, so ingestion and
+  mapping live in one `SKILL.md` as two internal phases. Phase 1 ingests a
+  PDF page or image of a Deployment Canvas (fixed 15-section template in
+  three columns — Environments/Constraints · Bundles/Middleware/Runtime/
+  Orchestration & scheduling/Container runtimes/Operating systems/
+  Virtualization engines/Cloud abstractions/Hardware/Locations ·
+  Networks/Installation/Operation) into a COM, with the same "no
+  interpretation" contract as the other Stage A skills. Phase 2 reads only
+  that COM and emits `NFR-OP-n` operation requirements for
+  `/speckit.specify` plus technical context, packaging and topology for
+  `/speckit.plan`, with the empty-section coherence judgement. ~90% of this
+  canvas belongs in `plan.md`, not `spec.md`.
 - `com/`: Canvas Object Models (JSON) persisted by the ingestion skills,
   one flat file per canvas — no per-delivery subfolder.
 
@@ -37,10 +53,11 @@ No other pipeline stage (`mapping/`, `composed/`, `audit/`, `evidence/`,
 
 Use delivery-prefixed, flat names for everything under `com/`, e.g.
 `com/E1-architectural_context-p2.json`, `com/E1-system_context-p1.json`,
-or `com/E1-functional-p7.json` — `<delivery_id>-<canvas>-p<n>.json`,
-where `<n>` is the real page number the canvas was found on. Post-it IDs
-are stable and section-coded, e.g. `ACC-ST-01` (Architectural Context
-Canvas), `SCC-SU-01` (System Context Canvas), or `FNC-OB-01` (Functional
+`com/E1-functional-p7.json`, or `com/E1-deployment-p6.json` —
+`<delivery_id>-<canvas>-p<n>.json`, where `<n>` is the real page number
+the canvas was found on. Post-it IDs are stable and section-coded, e.g.
+`ACC-ST-01` (Architectural Context Canvas), `SCC-SU-01` (System Context
+Canvas), `FNC-OB-01` (Functional Canvas), or `DPC-EN-01` (Deployment
 Canvas) — see the section code prefix table in each skill's
 `references/com-schema.md`.
 
@@ -49,10 +66,12 @@ Canvas) — see the section code prefix table in each skill's
 There is no application build, package manager, or script in this repository.
 Each skill runs by having an agent read and follow its `SKILL.md`
 (`.agents/skills/7cs-architectural-context/SKILL.md`,
-`.agents/skills/7cs-system-context/SKILL.md`, or
-`.agents/skills/7cs-functional-A/SKILL.md`) against a PDF or image; the
+`.agents/skills/7cs-system-context/SKILL.md`,
+`.agents/skills/7cs-functional-A/SKILL.md`, or
+`.agents/skills/7cs-deployment/SKILL.md`) against a PDF or image; the
 mapping skill `7cs-functional-B/SKILL.md` runs against an already-persisted
-COM. There is no CLI entry point yet.
+COM, and `7cs-deployment` does both phases in one run. There is no CLI
+entry point yet.
 
 Useful manual checks:
 
@@ -60,6 +79,7 @@ Useful manual checks:
 jq . com/E1-architectural_context-p2.json
 jq . com/E1-system_context-p1.json
 jq . com/E1-functional-p7.json
+jq . com/E1-deployment-p6.json
 ```
 
 ## Coding Style & Naming Conventions
