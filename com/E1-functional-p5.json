@@ -1,0 +1,87 @@
+{
+  "source": "[TDS DIS 2026] Equipo 2.pdf#p5",
+  "canvas": "functional",
+  "template": null,
+  "delivery_id": "E1",
+  "header": {
+    "system": null,
+    "organization": null,
+    "canvas": "Functional Canvas Front",
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Bundles & components",
+      "stickies": [
+        { "id": "FNC-BC-01", "text": "Compras", "bbox": [70, 130, 250, 200], "parent": null },
+        { "id": "FNC-BC-02", "text": "Recepción de Mercadería", "bbox": [260, 130, 540, 200], "parent": null },
+        { "id": "FNC-BC-03", "text": "Reposición", "bbox": [550, 130, 770, 200], "parent": null },
+        { "id": "FNC-BC-04", "text": "Inventario (stock, lotes, ubicaciones)", "bbox": [780, 130, 1180, 200], "parent": null },
+        { "id": "FNC-BC-05", "text": "Control Regulatorio (libro de productos controlados)", "bbox": [1190, 130, 1680, 200], "parent": null },
+        { "id": "FNC-BC-06", "text": "Reportes", "bbox": [1690, 130, 1820, 200], "parent": null },
+        { "id": "FNC-BC-07", "text": "Vencimientos (canje/destrucción)", "bbox": [1830, 130, 2110, 200], "parent": null }
+      ]
+    },
+    {
+      "name": "User inputs",
+      "stickies": [
+        { "id": "FNC-UI-01", "text": "Registro de recepción de mercadería", "bbox": [70, 380, 540, 470], "parent": null },
+        { "id": "FNC-UI-02", "text": "Autorización y firma de guía de recepción", "bbox": [550, 380, 1180, 470], "parent": null },
+        { "id": "FNC-UI-03", "text": "Registro de reposición", "bbox": [1190, 380, 1820, 470], "parent": null },
+        { "id": "FNC-UI-04", "text": "Generación de OC", "bbox": [1830, 380, 2110, 470], "parent": null },
+        { "id": "FNC-UI-05", "text": "Registro de canje", "bbox": [70, 480, 770, 570], "parent": null },
+        { "id": "FNC-UI-06", "text": "Registro de destrucción", "bbox": [780, 480, 1470, 570], "parent": null }
+      ]
+    },
+    {
+      "name": "UI-processing inputs",
+      "stickies": [
+        { "id": "FNC-UPI-01", "text": "Dashboard de stock (fila roja para stock crítico)", "bbox": [70, 700, 770, 790], "parent": null },
+        { "id": "FNC-UPI-02", "text": "Reporte semanal de próximos a vencer", "bbox": [780, 700, 1470, 790], "parent": null },
+        { "id": "FNC-UPI-03", "text": "Historial de movimientos", "bbox": [1490, 700, 2110, 790], "parent": null }
+      ]
+    },
+    {
+      "name": "User visualizations / reports",
+      "stickies": [
+        { "id": "FNC-UV-01", "text": "Reporte mensual de compras", "bbox": [70, 970, 540, 1060], "parent": null },
+        { "id": "FNC-UV-02", "text": "Alerta urgente en dashboard", "bbox": [550, 970, 1180, 1060], "parent": null },
+        { "id": "FNC-UV-03", "text": "PDF/Excel de orden de compra", "bbox": [1190, 970, 1620, 1060], "parent": null },
+        { "id": "FNC-UV-04", "text": "Guía de despacho impresa", "bbox": [1640, 970, 1820, 1060], "parent": null },
+        { "id": "FNC-UV-05", "text": "Informe de productos controlados", "bbox": [1830, 970, 2110, 1060], "parent": null },
+        { "id": "FNC-UV-06", "text": "Libro de control de productos controlados", "bbox": [70, 1070, 770, 1160], "parent": null }
+      ]
+    },
+    {
+      "name": "Constraints",
+      "stickies": [
+        { "id": "FNC-CT-01", "text": "Frontend SPA responsiva", "bbox": [1190, 1080, 1470, 1160], "parent": null },
+        { "id": "FNC-CT-02", "text": "Sin soporte offline", "bbox": [1490, 1080, 1820, 1160], "parent": null },
+        { "id": "FNC-CT-03", "text": "Stock Crítico para Dashboard", "bbox": [1830, 1080, 2110, 1160], "parent": null }
+      ]
+    },
+    {
+      "name": "API inputs",
+      "stickies": [
+        { "id": "FNC-API-01", "text": "Peticiones hacia el Backend Bundle vía API REST", "bbox": [70, 1230, 770, 1320], "parent": null }
+      ]
+    }
+  ],
+  "empty_sections": [
+    "Data objects",
+    "Data imports",
+    "Data exports",
+    "Jobs",
+    "Event handlers",
+    "Event triggers",
+    "Helpers",
+    "Technology stack"
+  ],
+  "notes": [
+    "Page title printed at top-right of the page reads 'Functional Canvas Front' (not the conventional top-left).",
+    "Header fields System, Organization, Version and Date are not printed on this canvas page; recorded as null.",
+    "Bundles & components is a flat list of bundle names across the top of the page — it is NOT a hierarchical grouper; all post-its recorded with parent=null.",
+    "Sections present but containing no post-its are recorded in sections[] with stickies:[] only if their rectangle is visible; missing rectangles go to empty_sections."
+  ]
+}
