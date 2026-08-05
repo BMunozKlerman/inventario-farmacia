@@ -36,11 +36,15 @@ El mismo presupuesto de un post-it se ejecuta en GitHub Actions.
 El proyecto usa Codex CLI autenticado con la cuenta ChatGPT actual. No usa
 OpenAI API ni requiere `OPENAI_API_KEY`. El PDF debe existir en `resources/`.
 
-Primero inicia sesión (una sola vez por equipo o cuando expire la sesión):
+Primero inicia sesión (una sola vez por equipo o cuando expire la sesión). Si
+`codex` no está en `PATH`, localiza automáticamente el ejecutable instalado por
+la extensión oficial de VS Code:
 
 ```powershell
-codex login
-codex login status
+$codexExe = Get-ChildItem "$env:USERPROFILE/.vscode/extensions/openai.chatgpt-*-win32-x64/bin/windows-x86_64/codex.exe" |
+  Sort-Object FullName -Descending | Select-Object -First 1 -ExpandProperty FullName
+& $codexExe login
+& $codexExe login status
 ```
 
 ```powershell

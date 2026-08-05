@@ -16,8 +16,15 @@ $resources=(RepoPath 'resources').TrimEnd('\')+'\'
 if(-not $pdf.StartsWith($resources,[StringComparison]::OrdinalIgnoreCase)){throw 'El PDF debe estar dentro de resources/'}
 if(-not(Test-Path -LiteralPath $pdf -PathType Leaf)){throw "PDF no encontrado: $pdf"}
 $codex=Get-Command codex -ErrorAction SilentlyContinue
-if(-not $codex){throw 'Codex CLI no está disponible. Instálalo e inicia sesión con tu cuenta ChatGPT.'}
-& $codex.Source login status *> $null
+$codexExe=if($codex){$codex.Source}else{
+  Get-ChildItem (Join-Path $env:USERPROFILE '.vscode/extensions') -Directory -Filter 'openai.chatgpt-*-win32-x64' -ErrorAction SilentlyContinue |
+    Sort-Object Name -Descending |
+    ForEach-Object {Join-Path $_.FullName 'bin/windows-x86_64/codex.exe'} |
+    Where-Object {Test-Path -LiteralPath $_ -PathType Leaf} |
+    Select-Object -First 1
+}
+if(-not $codexExe){throw 'Codex CLI no está disponible. Instala la extensión oficial de OpenAI para VS Code o agrega codex.exe al PATH.'}
+& $codexExe login status *> $null
 if($LASTEXITCODE -ne 0){throw 'Codex CLI no tiene una sesión activa. Ejecuta: codex login'}
 $renderer=Get-ChildItem (RepoPath 'tools/poppler') -Recurse -Filter pdftoppm.exe -File -ErrorAction SilentlyContinue|Select-Object -First 1
 if(-not $renderer){$renderer=Get-Command pdftoppm -ErrorAction SilentlyContinue}
@@ -71,7 +78,7 @@ Trabaja hasta escribir los artefactos. Ante una discrepancia real usa NEEDS CLAR
 $args=@('exec','--ephemeral','--color','never','-s','workspace-write','-C',$root)
 foreach($image in $images){$args+=@('-i',$image.FullName)}
 $args+=$prompt
-& $codex.Source @args
+& $codexExe @args
 if($LASTEXITCODE -ne 0){throw "codex exec falló: $LASTEXITCODE"}
 
 Write-Host '[3/5] Validando los COM presupuestados'
