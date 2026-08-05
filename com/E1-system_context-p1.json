@@ -1,0 +1,111 @@
+{
+  "source": "system-context.pdf#p1",
+  "canvas": "system_context",
+  "template": "7Cs v1.1 June 2026",
+  "delivery_id": "E1",
+  "header": {
+    "system": null,
+    "organization": null,
+    "canvas": null,
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Source users",
+      "stickies": [
+        { "id": "SCC-SU-01", "text": "QF DT", "bbox": [30,155,85,210], "parent": null },
+        { "id": "SCC-SU-02", "text": "QF Complementario", "bbox": [100,155,220,205], "parent": null },
+        { "id": "SCC-SU-03", "text": "Bodeguero", "bbox": [90,225,200,280], "parent": null }
+      ]
+    },
+    {
+      "name": "User data input interfaces",
+      "stickies": [
+        { "id": "SCC-UDI-01", "text": "UI WEB (SPA) responsiva", "bbox": [430,200,545,255], "parent": null }
+      ]
+    },
+    {
+      "name": "User data output interfaces",
+      "stickies": [
+        { "id": "SCC-UDO-01", "text": "UI WEB (SPA) responsiva", "bbox": [755,200,870,255], "parent": null }
+      ]
+    },
+    {
+      "name": "Target users",
+      "stickies": [
+        { "id": "SCC-TU-01", "text": "QF DT", "bbox": [1010,155,1065,210], "parent": null },
+        { "id": "SCC-TU-02", "text": "QF Complementario", "bbox": [1080,155,1200,205], "parent": null },
+        { "id": "SCC-TU-03", "text": "Bodeguero", "bbox": [1070,225,1180,280], "parent": null }
+      ]
+    },
+    {
+      "name": "Source systems",
+      "stickies": [
+        { "id": "SCC-SS-01", "text": "POS", "bbox": [30,375,85,430], "parent": null }
+      ]
+    },
+    {
+      "name": "System data input interfaces",
+      "stickies": [
+        { "id": "SCC-SDI-01", "text": "API Transacciones POS", "bbox": [420,365,555,440], "parent": null }
+      ]
+    },
+    {
+      "name": "System data output interfaces",
+      "stickies": [
+        { "id": "SCC-SDO-01", "text": "API Consulta Stock POS", "bbox": [745,365,880,440], "parent": null }
+      ]
+    },
+    {
+      "name": "Target systems",
+      "stickies": [
+        { "id": "SCC-TS-01", "text": "POS", "bbox": [1010,375,1065,430], "parent": null }
+      ]
+    },
+    {
+      "name": "Source repositories",
+      "stickies": []
+    },
+    {
+      "name": "Repository data input interfaces",
+      "stickies": []
+    },
+    {
+      "name": "Repository data output interfaces",
+      "stickies": [
+        { "id": "SCC-RDO-01", "text": "Generación de Libro de Controlados", "bbox": [740,540,875,615], "parent": null }
+      ]
+    },
+    {
+      "name": "Target repositories",
+      "stickies": [
+        { "id": "SCC-TR-01", "text": "Libro físico de productos controlados (ISP)", "bbox": [1000,540,1200,615], "parent": null }
+      ]
+    },
+    {
+      "name": "Source devices",
+      "stickies": [
+        { "id": "SCC-SD-01", "text": "Lector de código de barras", "bbox": [30,700,150,775], "parent": null }
+      ]
+    },
+    {
+      "name": "Device data input interfaces",
+      "stickies": [
+        { "id": "SCC-DDI-01", "text": "Lectura de código de barra", "bbox": [400,715,555,775], "parent": null }
+      ]
+    },
+    {
+      "name": "Device data output interfaces",
+      "stickies": [
+        { "id": "SCC-DDO-01", "text": "impresión mensual sobre hojas foliadas/timbradas", "bbox": [700,700,830,760], "parent": null },
+        { "id": "SCC-DDO-02", "text": "Generación de OC PDF / Excel", "bbox": [850,700,960,760], "parent": null }
+      ]
+    },
+    {
+      "name": "Target devices",
+      "stickies": []
+    }
+  ],
+  "empty_sections": []
+}
