@@ -5,8 +5,10 @@
 1. **Separación:** un PDF inmutable dentro de `resources/` se renderiza y divide en candidatos.
 2. **Lectura selectiva:** cada skill recibe candidatos, acepta sólo su canvas, ignora los demás y genera un COM literal.
 3. **Fuente de verdad:** una vez persistidos, sólo los COM alimentan las fases posteriores; nunca se vuelve al PDF para completar datos.
-4. **Transformación:** `7cs-com-transform` aplica reglas explícitas por tipo de COM y produce fragmentos, contexto de plan, trazas y dudas.
-5. **Composición y auditoría:** se construye el entregable y se valida antes de plan, tareas o código.
+4. **Compuerta de lectura:** si una transcripción o clasificación requiere aclaración, escribir preguntas estructuradas, detener el flujo y reanalizar después de recibir respuestas.
+5. **Transformación:** `7cs-com-transform` aplica reglas explícitas por tipo de COM y produce fragmentos, contexto de plan, trazas y preguntas estructuradas.
+6. **Compuerta de transformación:** no componer mientras exista una pregunta abierta; solicitar respuesta y volver a transformar hasta resolverla o reformularla.
+7. **Composición y auditoría:** construir y validar el entregable sólo con todas las preguntas cerradas.
 
 ## Propiedad exclusiva
 
@@ -26,6 +28,8 @@
 - Un lector ajeno devuelve `ignored` y no escribe archivo.
 - Cada post-it conserva texto literal, sección, `bbox`, `parent` e id estable.
 - Toda ambigüedad usa `[NEEDS CLARIFICATION]`; nunca se adivina.
+- Una aclaración abierta pausa el pipeline. No continuar, componer ni auditar con preguntas abiertas.
+- Guardar las respuestas del usuario en `clarifications/`; no reemplazar silenciosamente evidencia literal del PDF.
 - Cada post-it aceptado debe tener exactamente una traza después de transformación.
 - Tecnología y topología van a plan; comportamiento observable a spec.
 
@@ -37,4 +41,4 @@
 - Transformación: `mapping/<delivery>-<canvas>[-<variant>]-{fragment.md,plan_context.md,traces.json}`
 - Composición: `composed/<delivery>-*`
 - Auditoría: `audit/<delivery>-*`
-
+- Aclaraciones: `clarifications/<delivery>-{reading,transformation,answers}.json`

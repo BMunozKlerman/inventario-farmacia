@@ -1,7 +1,13 @@
-param([Parameter(Mandatory)][string]$DeliveryId,[string]$ComDirectory='com',[string]$MappingDirectory='mapping',[bool]$FalsifiabilityCheck=$false)
+param([Parameter(Mandatory)][string]$DeliveryId,[string]$ComDirectory='com',[string]$MappingDirectory='mapping',[string]$ClarificationDirectory='clarifications',[bool]$RequireClarificationGate=$false,[bool]$FalsifiabilityCheck=$false)
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 function RepoPath($p) { if ([IO.Path]::IsPathRooted($p)) { $p } else { Join-Path $root $p } }
+if($RequireClarificationGate){
+  $clarificationFiles=@(Get-ChildItem -LiteralPath (RepoPath $ClarificationDirectory) -Filter "$DeliveryId-*.json" -File -ErrorAction SilentlyContinue|Where-Object {$_.Name -match '-(reading|transformation)\.json$'})
+  if($clarificationFiles.Count -lt 2){throw "Missing clarification gate files for $DeliveryId"}
+  $openQuestions=@($clarificationFiles|ForEach-Object {(Get-Content -LiteralPath $_.FullName -Raw|ConvertFrom-Json).questions}|Where-Object {$_.status -eq 'open'})
+  if($openQuestions.Count){throw "Open clarifications for ${DeliveryId}: $($openQuestions.Count)"}
+}
 $comFiles = @(Get-ChildItem -LiteralPath (RepoPath $ComDirectory) -Filter "$DeliveryId-*.json" -File -ErrorAction SilentlyContinue)
 if (-not $comFiles) { throw "No COM files for $DeliveryId" }
 $stickies = @($comFiles | ForEach-Object { $c=Get-Content -Raw $_.FullName|ConvertFrom-Json; @($c.sections)|ForEach-Object{@($_.stickies)|ForEach-Object{$_.id}} } | Sort-Object -Unique)

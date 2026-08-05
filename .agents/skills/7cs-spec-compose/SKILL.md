@@ -8,8 +8,7 @@ description: Compone fragmentos, contexto de plan, trazas y dudas generados por 
 1. Leer únicamente `mapping/<delivery>-*`; no leer PDF ni completar COM.
 2. Verificar que cada traza apunte a un destino existente.
 3. Deduplicar sólo mediante una regla y conservar todos los ids fuente.
-4. Generar constitution, specify, plan y anexo de trazabilidad en `composed/`.
-5. Con dudas bloqueantes, conservar contexto pero marcar plan como `BLOCKED`.
+4. Leer `clarifications/<delivery>-transformation.json` y rechazar la composición si existe una pregunta `open`.
+5. Generar constitution, specify, plan y anexo de trazabilidad en `composed/` únicamente con la compuerta cerrada.
 
-Acceptance: ninguna evidencia perdida, ids únicos, trazas sin huérfanos y tecnología fuera de specify.
-
+Acceptance: cero preguntas abiertas, ninguna evidencia perdida, ids únicos, trazas sin huérfanos y tecnología fuera de specify.

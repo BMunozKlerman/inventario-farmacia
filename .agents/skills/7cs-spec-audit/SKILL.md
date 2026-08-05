@@ -12,5 +12,4 @@ description: Audita el entregable 7Cs recontando post-its desde los COM y verifi
 
 Ejecutar `scripts/audit-pipeline.ps1`. Recontar desde COM, no confiar en balances declarados. La falsabilidad retira una traza sólo en memoria y debe provocar rechazo.
 
-Bloquear si C, T o V fallan; bloquear plan si quedan dudas sobre contratos, permisos, esquemas, métricas o periodicidades.
-
+Bloquear si C, T o V fallan. Rechazar la auditoría si queda cualquier aclaración abierta; el pipeline debe haber pausado antes de composición.

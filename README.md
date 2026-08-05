@@ -11,6 +11,11 @@ Pipeline 7Cs para convertir un PDF de canvas en COM literales y un entregable tr
 5. `7cs-spec-compose` construye el entregable en `composed/`.
 6. `7cs-spec-audit` verifica cobertura, identificadores y falsabilidad en `audit/`.
 
+Si una etapa necesita una aclaración, el pipeline se pausa en la consola, muestra
+la pregunta y espera una respuesta. Codex vuelve a analizar la etapa: si la
+respuesta es suficiente continúa; si no, formula nuevamente la aclaración. La
+composición y la auditoría no se ejecutan mientras exista una pregunta abierta.
+
 Los lectores son Business Context, Architectural Context, System Context, Structural, Functional Front, Functional Back y Deployment. El COM conserva texto literal, secciones, coordenadas y relaciones; no contiene requisitos derivados.
 
 ## Requisitos
@@ -74,6 +79,7 @@ Usar un `DeliveryId` diferente para conservar resultados de ejecuciones anterior
 - `mapping/`: fragmentos, contexto de plan, trazas y aclaraciones.
 - `composed/`: especificación, plan y trazabilidad compuestos.
 - `audit/`: informe y resumen de auditoría.
+- `clarifications/`: preguntas, estado y respuestas proporcionadas durante la ejecución.
 
 Una ejecución completa termina con:
 
