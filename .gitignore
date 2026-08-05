@@ -1,3 +1,7 @@
 tools/poppler/
 tmp/
-evidence/*.png
+/com/
+/evidence/
+/mapping/
+/composed/
+/audit/

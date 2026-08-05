@@ -24,8 +24,16 @@ $codexExe=if($codex){$codex.Source}else{
     Select-Object -First 1
 }
 if(-not $codexExe){throw 'Codex CLI no está disponible. Instala la extensión oficial de OpenAI para VS Code o agrega codex.exe al PATH.'}
-& $codexExe login status *> $null
-if($LASTEXITCODE -ne 0){throw 'Codex CLI no tiene una sesión activa. Ejecuta: codex login'}
+$previousErrorAction=$ErrorActionPreference
+try {
+  $ErrorActionPreference='Continue'
+  & $codexExe login status 2>&1 | Out-Null
+  $loginExitCode=$LASTEXITCODE
+}
+finally {
+  $ErrorActionPreference=$previousErrorAction
+}
+if($loginExitCode -ne 0){throw 'Codex CLI no tiene una sesión activa. Ejecuta: codex login'}
 $renderer=Get-ChildItem (RepoPath 'tools/poppler') -Recurse -Filter pdftoppm.exe -File -ErrorAction SilentlyContinue|Select-Object -First 1
 if(-not $renderer){$renderer=Get-Command pdftoppm -ErrorAction SilentlyContinue}
 if(-not $renderer){throw 'Poppler no está disponible: falta pdftoppm.exe'}
@@ -55,7 +63,8 @@ for($i=0;$i -lt $rendered.Count;$i++){
   Move-Item -LiteralPath $rendered[$i].FullName -Destination $target -Force
   $pages+=@{page=$i+1;evidence=(Resolve-Path -Relative $target);status='pending'}
 }
-@{delivery_id=$DeliveryId;source="resources/$([IO.Path]::GetFileName($pdf))";source_sha256=(Get-FileHash $pdf -Algorithm SHA256).Hash.ToLowerInvariant();pages=$pages}|ConvertTo-Json -Depth 10|Set-Content (Join-Path (RepoPath 'evidence') "$DeliveryId-page-index.json") -Encoding utf8
+$sourceHash=(Get-FileHash -LiteralPath $pdf -Algorithm SHA256).Hash.ToLowerInvariant()
+@{delivery_id=$DeliveryId;source="resources/$([IO.Path]::GetFileName($pdf))";source_sha256=$sourceHash;pages=$pages}|ConvertTo-Json -Depth 10|Set-Content (Join-Path (RepoPath 'evidence') "$DeliveryId-page-index.json") -Encoding utf8
 $images=@(Get-ChildItem (RepoPath 'evidence') -Filter "$DeliveryId-p*.png" -File|Sort-Object Name)
 
 Write-Host '[2/5] Ejecutando las skills con Codex CLI y la licencia ChatGPT'
@@ -75,11 +84,18 @@ Flujo obligatorio:
 
 Trabaja hasta escribir los artefactos. Ante una discrepancia real usa NEEDS CLARIFICATION y no falsifiques evidencia.
 "@
-$args=@('exec','--ephemeral','--color','never','-s','workspace-write','-C',$root)
-foreach($image in $images){$args+=@('-i',$image.FullName)}
-$args+=$prompt
-& $codexExe @args
-if($LASTEXITCODE -ne 0){throw "codex exec falló: $LASTEXITCODE"}
+$codexArgs=@('exec','--ephemeral','--color','never','-s','workspace-write','-C',$root)
+foreach($image in $images){$codexArgs+=@('-i',$image.FullName)}
+$previousErrorAction=$ErrorActionPreference
+try {
+  $ErrorActionPreference='Continue'
+  $prompt | & $codexExe @codexArgs '-'
+  $codexExitCode=$LASTEXITCODE
+}
+finally {
+  $ErrorActionPreference=$previousErrorAction
+}
+if($codexExitCode -ne 0){throw "codex exec falló: $codexExitCode"}
 
 Write-Host '[3/5] Validando los COM presupuestados'
 $budget=Get-Content -Raw (RepoPath $BudgetPath)|ConvertFrom-Json
