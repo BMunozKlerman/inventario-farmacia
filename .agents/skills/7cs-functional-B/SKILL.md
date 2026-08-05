@@ -1,9 +1,9 @@
 ---
-name: 7cs-functional
-description: Skill de mapeo del pipeline 7Cs→Spec Kit (Etapa B · paralelizable). Convierte cada COM de un Functional Canvas (uno por bundle; puede haber varios por entrega) en requisitos funcionales FR con prefijo de bundle, entidades, escenarios Dado/Cuando/Entonces y dudas para /speckit.specify, más stack por bundle para /speckit.plan. Usar cuando exista un COM con canvas == "functional" dentro del pipeline 7Cs, o cuando el usuario pida derivar requisitos funcionales desde Functional Canvas.
+name: 7cs-functional-B
+description: Skill de mapeo del pipeline 7Cs→Spec Kit (Etapa B · paralelizable). Consume el COM producido por 7cs-functional-A (canvas == "functional"; uno por bundle, varios por entrega) y lo convierte en requisitos funcionales FR con prefijo de bundle, entidades, escenarios Dado/Cuando/Entonces y dudas para /speckit.specify, más stack por bundle para /speckit.plan. NO produce el COM — eso es trabajo de 7cs-functional-A. Usar cuando exista un COM con canvas == "functional" dentro del pipeline 7Cs, o cuando el usuario pida derivar requisitos funcionales desde un Functional Canvas ya ingestado.
 ---
 
-# 7cs-functional — Mapeo · Functional Canvas (×N bundles)
+# 7cs-functional-B — Mapeo · Functional Canvas (×N bundles)
 
 **El skill itera, no promedia.** Se ejecuta **una vez por cada Functional Canvas** y
 prefija los identificadores con el bundle (`FR-ETL-001`, `FR-CMS-001`, `FR-INT-001`).
@@ -16,7 +16,7 @@ funcional de una naturaleza particular (ver tabla).
 
 > Antes de emitir salida, leer:
 > - `references/reglas-reescritura.md` — las 7 reglas R1–R7 con prohibiciones, forma canónica del FR y justificación.
-> - `references/com-schema.md` — esquema del Canvas Object Model y convenciones (bbox, parent, empty_sections, idempotencia).
+> - `references/com-schema.md` — esquema del COM **consumido** (producido por `7cs-functional-A`) y convenciones (bbox, parent, empty_sections, idempotencia). Este skill NO produce el COM.
 > - `references/ejemplo-trabajado-etl.md` — caso completo del bundle ETL de Ejemplo 1, con post-it tabulados, salida, trazas y balance.
 
 ---
@@ -195,9 +195,10 @@ Este skill pertenece a la **Etapa B · Mapeo** y se ejecuta en paralelo con
 `7cs-structural` y `7cs-deployment` (todos ven únicamente su COM por tipo).
 Tres reglas del pipeline lo gobiernan:
 
-- **Aislamiento.** Solo consume el COM con `canvas == "functional"` de la entrega
-  y el censo de bundles producido por `7cs-structural`. No lee otros canvas
-  directamente; si necesita un dato que no está, emite `[NEEDS CLARIFICATION]`.
+- **Aislamiento.** Solo consume el COM con `canvas == "functional"` producido
+  por **`7cs-functional-A`** (Etapa A) y el censo de bundles producido por
+  `7cs-structural`. No lee otros canvas directamente; si necesita un dato que
+  no está, emite `[NEEDS CLARIFICATION]`.
 - **Idempotencia.** Con el mismo COM y el mismo censo, emite los mismos
   `FR-{bundle.code}-{NNN}` y las mismas trazas; los identificadores de post-it
   (`E1-FN-J01`, etc.) son estables entre corridas.

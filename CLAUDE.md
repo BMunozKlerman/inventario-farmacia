@@ -2,9 +2,11 @@
 
 ## Project Structure & Module Organization
 
-This repository is building a 7Cs-to-Spec Kit documentation pipeline. Only the
-ingestion stage exists so far, covering two canvas types: Architectural
-Context and System Context.
+This repository is building a 7Cs-to-Spec Kit documentation pipeline. The
+ingestion stage (Etapa A) covers three canvas types — Architectural
+Context, System Context, and Functional — and one mapping skill
+(`7cs-functional-B`, Etapa B) consumes the Functional COM to emit
+FRs for `/speckit.specify` and stack for `/speckit.plan`.
 
 - `resources/`: original delivery PDFs; treat as immutable source material.
 - `.agents/skills/7cs-architectural-context/`: ingests a PDF page or image of an
@@ -17,18 +19,28 @@ Context and System Context.
   Source/Data input/Data output/Target, 16 sections total) into a COM. Same
   contract shape as the architectural-context skill; see its own `SKILL.md`
   and `references/`.
-- `com/`: Canvas Object Models (JSON) persisted by the skills, one flat file
-  per canvas — no per-delivery subfolder.
+- `.agents/skills/7cs-functional-A/`: ingests a PDF page or image of a
+  Functional Canvas (14 loose sections plus a `Bundles & components` frame)
+  into a COM. Same ingestion-only contract as the other two; one COM per
+  Functional Canvas (i.e. one per bundle when the delivery has several).
+  See its `SKILL.md` and `references/`.
+- `.agents/skills/7cs-functional-B/`: Stage B mapping skill — consumes the
+  COM(s) produced by `7cs-functional-A` plus the bundle census from a
+  (planned) structural skill, and emits per-bundle FRs with
+  `Dado/Cuando/Entonces` scenarios, `§Key Entities`, and plan stack.
+  Never produces a COM.
+- `com/`: Canvas Object Models (JSON) persisted by the ingestion skills,
+  one flat file per canvas — no per-delivery subfolder.
 
-No other pipeline stage (canvas-mapping skills beyond these two, `mapping/`,
-`composed/`, `audit/`, `evidence/`, `scripts/`) exists in this repository yet.
-Don't assume they do.
+No other pipeline stage (`mapping/`, `composed/`, `audit/`, `evidence/`,
+`scripts/`) exists in this repository yet. Don't assume they do.
 
 Use delivery-prefixed, flat names for everything under `com/`, e.g.
-`com/E1-architectural_context-p2.json` or `com/E1-system_context-p1.json` —
-`<delivery_id>-<canvas>-p<n>.json`, where `<n>` is the real page number the
-canvas was found on. Post-it IDs are stable and section-coded, e.g.
-`ACC-ST-01` (Architectural Context Canvas) or `SCC-SU-01` (System Context
+`com/E1-architectural_context-p2.json`, `com/E1-system_context-p1.json`,
+or `com/E1-functional-p7.json` — `<delivery_id>-<canvas>-p<n>.json`,
+where `<n>` is the real page number the canvas was found on. Post-it IDs
+are stable and section-coded, e.g. `ACC-ST-01` (Architectural Context
+Canvas), `SCC-SU-01` (System Context Canvas), or `FNC-OB-01` (Functional
 Canvas) — see the section code prefix table in each skill's
 `references/com-schema.md`.
 
@@ -36,15 +48,18 @@ Canvas) — see the section code prefix table in each skill's
 
 There is no application build, package manager, or script in this repository.
 Each skill runs by having an agent read and follow its `SKILL.md`
-(`.agents/skills/7cs-architectural-context/SKILL.md` or
-`.agents/skills/7cs-system-context/SKILL.md`) against a PDF or image; there is no CLI
-entry point yet.
+(`.agents/skills/7cs-architectural-context/SKILL.md`,
+`.agents/skills/7cs-system-context/SKILL.md`, or
+`.agents/skills/7cs-functional-A/SKILL.md`) against a PDF or image; the
+mapping skill `7cs-functional-B/SKILL.md` runs against an already-persisted
+COM. There is no CLI entry point yet.
 
 Useful manual checks:
 
 ```bash
 jq . com/E1-architectural_context-p2.json
 jq . com/E1-system_context-p1.json
+jq . com/E1-functional-p7.json
 ```
 
 ## Coding Style & Naming Conventions
