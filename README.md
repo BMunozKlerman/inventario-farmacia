@@ -14,6 +14,7 @@ integration; controlled-substance tracking).
   into a structured Canvas Object Model (COM). Ingestion only; it does not
   write to `constitution.md` or `spec.md`. See
   `skills/7cs-architectural-context/SKILL.md`.
+- **`skills/7cs-functional/`** — functional programming skill for analyzing and documenting the functional aspects of the pharmacy inventory system. This skill processes functional requirements and mappings to create structured functional specifications based on the 7CS framework.
 - **`com/`** — Canvas Object Models (JSON) persisted by the skill, one flat
   file per canvas: `<delivery_id>-architectural_context-p<n>.json`. Currently
   holds one processed page from the delivery above.
