@@ -10,17 +10,17 @@ integration; controlled-substance tracking).
   material. Currently holds the team's canvas delivery,
   `[TDS DIS 2026] Equipo 2.pdf`, and a standalone System Context Canvas
   export, `system-context.pdf`.
-- **`skills/7cs-architectural-context/`** — reads an Architectural Context
+- **`.agents/skills/7cs-architectural-context/`** — reads an Architectural Context
   Canvas (7Cs, 10 free-form sections) from a PDF or image and converts it
   into a structured Canvas Object Model (COM). Ingestion only; it does not
   write to `constitution.md` or `spec.md`. See
-  `skills/7cs-architectural-context/SKILL.md`.
-- **`skills/7cs-functional/`** — functional programming skill for analyzing and documenting the functional aspects of the pharmacy inventory system. This skill processes functional requirements and mappings to create structured functional specifications based on the 7CS framework.
-- **`skills/7cs-system-context/`** — reads a System Context Canvas (7Cs,
+  `.agents/skills/7cs-architectural-context/SKILL.md`.
+- **`.agents/skills/7cs-functional/`** — functional programming skill for analyzing and documenting the functional aspects of the pharmacy inventory system. This skill processes functional requirements and mappings to create structured functional specifications based on the 7CS framework.
+- **`.agents/skills/7cs-system-context/`** — reads a System Context Canvas (7Cs,
   fixed 4×4 grid of Users/Systems/Repositories/Devices ×
   Source/Data input/Data output/Target, 16 sections) from a PDF or image and
   converts it into a COM. Same ingestion-only contract as the
-  architectural-context skill. See `skills/7cs-system-context/SKILL.md`.
+  architectural-context skill. See `.agents/skills/7cs-system-context/SKILL.md`.
 - **`com/`** — Canvas Object Models (JSON) persisted by the skills, one flat
   file per canvas: `<delivery_id>-<canvas>-p<n>.json`. Currently holds one
   processed Architectural Context page (`E1-architectural_context-p2.json`)

@@ -7,12 +7,12 @@ ingestion stage exists so far, covering two canvas types: Architectural
 Context and System Context.
 
 - `resources/`: original delivery PDFs; treat as immutable source material.
-- `skills/7cs-architectural-context/`: ingests a PDF page or image of an
+- `.agents/skills/7cs-architectural-context/`: ingests a PDF page or image of an
   Architectural Context Canvas (10 free-form sections) into a Canvas Object
   Model (COM). See its `SKILL.md` for the full contract, and
   `references/com-schema.md` and `references/rewriting-rules.md` for the COM
   schema and the rewriting rules a future mapping skill will apply.
-- `skills/7cs-system-context/`: ingests a PDF page or image of a System
+- `.agents/skills/7cs-system-context/`: ingests a PDF page or image of a System
   Context Canvas (fixed 4×4 grid — Users/Systems/Repositories/Devices ×
   Source/Data input/Data output/Target, 16 sections total) into a COM. Same
   contract shape as the architectural-context skill; see its own `SKILL.md`
@@ -36,8 +36,8 @@ Canvas) — see the section code prefix table in each skill's
 
 There is no application build, package manager, or script in this repository.
 Each skill runs by having an agent read and follow its `SKILL.md`
-(`skills/7cs-architectural-context/SKILL.md` or
-`skills/7cs-system-context/SKILL.md`) against a PDF or image; there is no CLI
+(`.agents/skills/7cs-architectural-context/SKILL.md` or
+`.agents/skills/7cs-system-context/SKILL.md`) against a PDF or image; there is no CLI
 entry point yet.
 
 Useful manual checks:
