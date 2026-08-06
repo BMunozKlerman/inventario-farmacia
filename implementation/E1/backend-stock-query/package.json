@@ -1,0 +1,13 @@
+{
+  "name": "e1-backend-stock-query",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Slice ejecutable para FNC-BCK-APO-01 / FR-BCK-003",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

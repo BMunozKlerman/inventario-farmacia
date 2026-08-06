@@ -10,6 +10,7 @@ Pipeline 7Cs para convertir un PDF de canvas en COM literales y un entregable tr
 4. `7cs-com-transform` genera fragmentos, contexto de plan, trazas y dudas en `mapping/`.
 5. `7cs-spec-compose` construye el entregable en `composed/`.
 6. `7cs-spec-audit` verifica cobertura, identificadores y falsabilidad en `audit/`.
+7. `7cs-backend-slice` genera código fuente ejecutable para exactamente un post-it Functional Back en `implementation/`.
 
 Si una etapa necesita una aclaración, el pipeline se pausa en la consola, muestra
 la pregunta y espera una respuesta. Codex vuelve a analizar la etapa: si la
@@ -51,6 +52,8 @@ Cuando exista un solo PDF en `resources/`, ejecutar el pipeline completo con:
 ```
 
 El lanzador detecta el PDF automáticamente y usa `E1` como identificador.
+También incorpora automáticamente `codex.exe` y `rg.exe` desde la extensión de
+OpenAI al entorno de ejecución; no es necesario instalarlos globalmente.
 
 Para generar y validar solamente los siete COM:
 
@@ -80,11 +83,19 @@ Usar un `DeliveryId` diferente para conservar resultados de ejecuciones anterior
 - `composed/`: especificación, plan y trazabilidad compuestos.
 - `audit/`: informe y resumen de auditoría.
 - `clarifications/`: preguntas, estado y respuestas proporcionadas durante la ejecución.
+- `implementation/`: bundle backend mínimo, pruebas, Dockerfile y trazabilidad de un post-it.
 
 Una ejecución completa termina con:
 
 ```text
-[5/5] Pipeline completo: PASS
+Pipeline completo: PASS
+```
+
+El bundle generado incluye su propio `run.cmd`. Por ejemplo:
+
+```powershell
+cd .\implementation\E1\backend-stock-query
+.\run.cmd
 ```
 
 ## Validación local

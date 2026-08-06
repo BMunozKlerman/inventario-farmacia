@@ -1,0 +1,18 @@
+{
+  "delivery_id": "E1",
+  "sticky_id": "FNC-BCK-APO-01",
+  "requirement_id": "FR-BCK-003",
+  "literal_text": "Consulta de stock disponible por producto (POS)",
+  "bundle": "STR-BB-01",
+  "source_files": [
+    "com/E1-functional-back-p07.json",
+    "composed/E1-specify.md",
+    "composed/E1-traceability.json",
+    "clarifications/E1-answers.json"
+  ],
+  "implemented_files": [
+    "src/server.js",
+    "src/stock-service.js",
+    "test/stock-service.test.js"
+  ]
+}

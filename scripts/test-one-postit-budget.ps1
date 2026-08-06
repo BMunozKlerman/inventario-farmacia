@@ -13,8 +13,11 @@ $closed=@{delivery_id='BUDGET1';questions=@()}|ConvertTo-Json
 $closed|Set-Content "$scratch/clarifications/BUDGET1-reading.json" -Encoding utf8
 $closed|Set-Content "$scratch/clarifications/BUDGET1-transformation.json" -Encoding utf8
 & "$PSScriptRoot/audit-pipeline.ps1" -DeliveryId BUDGET1 -ComDirectory "$scratch/com" -MappingDirectory "$scratch/mapping" -ClarificationDirectory "$scratch/clarifications" -RequireClarificationGate $true
-$open=@{delivery_id='BUDGET1';questions=@(@{id='Q-TEST-001';question='dato';status='open'})}|ConvertTo-Json -Depth 5
+$expectedQuestion='¿Qué simbologías de código de barras se aceptarán?'
+$open=@{delivery_id='BUDGET1';questions=@(@{id='Q-TEST-001';question=$expectedQuestion;status='open'})}|ConvertTo-Json -Depth 5
 $open|Set-Content "$scratch/clarifications/BUDGET1-transformation.json" -Encoding utf8
+$decodedQuestion=((Get-Content -LiteralPath "$scratch/clarifications/BUDGET1-transformation.json" -Raw -Encoding UTF8|ConvertFrom-Json).questions)[0].question
+if($decodedQuestion -ne $expectedQuestion){throw 'UTF-8 clarification round-trip failed'}
 $gateRejected=$false
 try { & "$PSScriptRoot/audit-pipeline.ps1" -DeliveryId BUDGET1 -ComDirectory "$scratch/com" -MappingDirectory "$scratch/mapping" -ClarificationDirectory "$scratch/clarifications" -RequireClarificationGate $true }
 catch { $gateRejected=$true }
