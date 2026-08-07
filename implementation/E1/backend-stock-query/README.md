@@ -1,12 +1,9 @@
 # Backend Stock Query
 
-Bundle Node.js de una sola capacidad: `FNC-BCK-AO-01`, trazada a `FR-BCK-GENERAL-003`. Implementa la consulta de stock disponible por producto para POS.
+Bundle Node.js de una sola capacidad: `FNC-BCK-AO-01`, trazada a `FR-BCK-GENERAL-003`.
+Implementa la consulta de stock disponible por producto para POS.
 
-## Ejecución
-
-Con Docker: `.\run.cmd`. Solo construir y probar: `.\run.cmd --build-only`.
-
-Con Node.js 20+: `npm test` y `npm start`.
+## Ejecutar con Docker
 
 ```bash
 ./run.sh

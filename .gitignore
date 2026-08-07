@@ -1,2 +1,2 @@
-tools/poppler/
 tmp/
+__pycache__/
