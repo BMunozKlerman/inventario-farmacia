@@ -1,0 +1,26 @@
+{
+  "detection_order": ["codex", "claude", "gemini"],
+  "agents": {
+    "codex": {
+      "command": "codex",
+      "exec_args": ["exec", "--ephemeral", "--color", "never", "-s", "workspace-write", "-C", "{root}"],
+      "prompt_mode": "stdin",
+      "stdin_arg": "-",
+      "image_mode": "flag",
+      "image_arg": ["-i", "{image}"],
+      "login_check": ["login", "status"]
+    },
+    "claude": {
+      "command": "claude",
+      "exec_args": ["-p", "--permission-mode", "acceptEdits", "--add-dir", "{root}"],
+      "prompt_mode": "stdin",
+      "image_mode": "prompt_paths"
+    },
+    "gemini": {
+      "command": "gemini",
+      "exec_args": ["-p"],
+      "prompt_mode": "arg",
+      "image_mode": "prompt_paths"
+    }
+  }
+}

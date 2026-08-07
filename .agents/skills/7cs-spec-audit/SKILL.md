@@ -10,6 +10,6 @@ description: Audita el entregable 7Cs recontando post-its desde los COM y verifi
 - `T = tecnologías concretas en specify`; debe ser 0.
 - `V = FR con escenario Dado/Cuando/Entonces / FR`; debe ser 1,00.
 
-Ejecutar `scripts/audit-pipeline.ps1`. Recontar desde COM, no confiar en balances declarados. La falsabilidad retira una traza sólo en memoria y debe provocar rechazo.
+Ejecutar `scripts/audit_pipeline.py`. Recontar desde COM, no confiar en balances declarados. La falsabilidad retira una traza sólo en memoria y debe provocar rechazo.
 
 Bloquear si C, T o V fallan. Rechazar la auditoría si queda cualquier aclaración abierta; el pipeline debe haber pausado antes de composición.

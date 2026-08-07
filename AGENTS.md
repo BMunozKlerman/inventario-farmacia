@@ -17,8 +17,8 @@ Conservar texto literal, errores ortográficos, sección, `bbox`, `parent`, secc
 
 ## Validación
 
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/test-one-postit-budget.ps1
+```bash
+python3 -m unittest discover -s tests
 ```
 
 Exigir cobertura de trazas igual a 1,00 y que la prueba de falsabilidad rechace la eliminación de una traza.
