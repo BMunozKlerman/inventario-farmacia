@@ -2,10 +2,15 @@
 
 import datetime
 import json
+import sys
 from pathlib import Path
 
 
 class AbortedByUser(RuntimeError):
+    pass
+
+
+class NonInteractiveConsole(RuntimeError):
     pass
 
 
@@ -19,6 +24,13 @@ def read_open_questions(path):
 
 
 def request_answers(answers_path, delivery_id, phase, questions, prompt=input):
+    if prompt is input and not sys.stdin.isatty():
+        raise NonInteractiveConsole(
+            "El pipeline necesita {} aclaraciones ({}) y la consola no es interactiva. "
+            "Ejecútalo desde una terminal, o responde en {} y vuelve a lanzarlo.".format(
+                len(questions), phase, Path(answers_path).name
+            )
+        )
     answers_path = Path(answers_path)
     responses = []
     if answers_path.is_file():
