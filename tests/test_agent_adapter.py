@@ -140,6 +140,17 @@ class LoadRegistryTest(unittest.TestCase):
         for name in self.registry["detection_order"]:
             self.assertIn(name, self.registry["agents"])
 
+    def test_no_autodetected_profile_bypasses_the_permission_system(self):
+        for name in self.registry["detection_order"]:
+            self.assertNotIn("bypassPermissions", self.registry["agents"][name].exec_args)
+            self.assertNotIn(
+                "--dangerously-skip-permissions", self.registry["agents"][name].exec_args
+            )
+
+    def test_the_unattended_profile_is_opt_in_and_never_autodetected(self):
+        self.assertIn("claude-unattended", self.registry["agents"])
+        self.assertNotIn("claude-unattended", self.registry["detection_order"])
+
     def test_only_codex_declares_a_login_check(self):
         self.assertEqual(["login", "status"], self.registry["agents"]["codex"].login_check)
         self.assertIsNone(self.registry["agents"]["claude"].login_check)

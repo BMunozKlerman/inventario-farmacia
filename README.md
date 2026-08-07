@@ -74,6 +74,15 @@ Para agregar un agente nuevo, añade una entrada a `config/agents.json`:
   rutas al final del prompt para que el agente las lea desde el workspace.
 - `login_check` (opcional): subcomando que debe devolver 0 si hay sesión activa.
 
+Los perfiles autodetectados son **interactivos**: el agente pedirá aprobación antes de ejecutar
+comandos, así que el pipeline debe correrse desde una terminal real. Para una corrida desatendida
+(CI, por ejemplo) existe el perfil opt-in `claude-unattended`, que preaprueba únicamente las
+herramientas que el pipeline necesita. Nunca se autodetecta; hay que pedirlo explícitamente:
+
+```bash
+SEVENCS_AGENT=claude-unattended python3 scripts/run_project.py
+```
+
 Las skills viven en `.agents/skills/` y el pipeline **las inyecta literalmente en el prompt** de cada
 etapa. No dependen del mecanismo de descubrimiento de skills de ningún agente (`.agents/`, `.claude/`,
 etc.), así que basta con que el CLI elegido acepte un prompt y pueda escribir en el workspace.

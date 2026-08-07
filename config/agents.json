@@ -16,6 +16,14 @@
       "prompt_mode": "stdin",
       "image_mode": "prompt_paths"
     },
+    "claude-unattended": {
+      "command": "claude",
+      "exec_args": ["-p", "--permission-mode", "acceptEdits",
+                    "--allowedTools", "Bash", "Read", "Write", "Edit", "Glob", "Grep",
+                    "--add-dir", "{root}"],
+      "prompt_mode": "stdin",
+      "image_mode": "prompt_paths"
+    },
     "gemini": {
       "command": "gemini",
       "exec_args": ["-p"],
