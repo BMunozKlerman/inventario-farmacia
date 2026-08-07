@@ -1,0 +1,109 @@
+{
+  "source": "[TDS DIS 2026] Equipo 2.pdf#p4",
+  "canvas": "structural",
+  "template": null,
+  "delivery_id": "E1",
+  "header": {
+    "system": null,
+    "organization": null,
+    "canvas": "Structural Canvas",
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Frontend bundles",
+      "stickies": [
+        { "id": "STR-FB-01", "text": "Single Page Application (SPA) web con diseño responsivo", "bbox": [ 283, 65, 320, 73 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Data input interfaces to frontend bundles",
+      "stickies": [
+        { "id": "STR-IFIN-01", "text": "Interfaz web", "bbox": [ 45, 68, 87, 83 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Data output interfaces from frontend bundles",
+      "stickies": [
+        { "id": "STR-IFOUT-01", "text": "UI WEB (SPA) responsiva", "bbox": [ 632, 70, 651, 78 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Backend bundles",
+      "stickies": [
+        { "id": "STR-BB-01", "text": "Aplicación monolítica server-side (Node.js), con posible evolución futura a microservicios", "bbox": [ 277, 130, 338, 139 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Data input interfaces to backend bundles",
+      "stickies": [
+        { "id": "STR-IFIN-02", "text": "API REST", "bbox": [ 41, 134, 61, 148 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Data output interfaces from backend bundles",
+      "stickies": [
+        { "id": "STR-IFOUT-02", "text": "API REST", "bbox": [ 41, 134, 61, 148 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Repository bundles",
+      "stickies": [
+        { "id": "STR-RB-01", "text": "PostgreSQL (Cloud SQL)", "bbox": [ 276, 204, 310, 212 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Data input interfaces to repository bundles",
+      "stickies": []
+    },
+    {
+      "name": "Data output interfaces from repository bundles",
+      "stickies": []
+    },
+    {
+      "name": "Platform & Infrastructure bundles",
+      "stickies": [
+        { "id": "STR-PIB-01", "text": "Google Cloud Platform (GCP)", "bbox": [ 281, 269, 305, 278 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Data input interfaces to platform & infrastructure bundles",
+      "stickies": []
+    },
+    {
+      "name": "Data output interfaces from platform & infrastructure bundles",
+      "stickies": []
+    },
+    {
+      "name": "Device bundles",
+      "stickies": [
+        { "id": "STR-DB-01", "text": "Lector de código de barras", "bbox": [ 276, 339, 310, 349 ], "parent": null },
+        { "id": "STR-DB-02", "text": "Impresora", "bbox": [ 333, 349, 366, 359 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Data input interfaces to device bundles",
+      "stickies": [
+        { "id": "STR-IFIN-03", "text": "Lectura de código de barras", "bbox": [ 40, 342, 66, 351 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Data output interfaces from device bundles",
+      "stickies": [
+        { "id": "STR-IFOUT-03", "text": "Libro de control mensual", "bbox": [ 598, 339, 627, 349 ], "parent": null },
+        { "id": "STR-IFOUT-04", "text": "PDF/Excel OC", "bbox": [ 650, 340, 694, 353 ], "parent": null }
+      ]
+    },
+    {
+      "name": "Constraints",
+      "stickies": [
+        { "id": "STR-CN-01", "text": "Registros de transacciones inmutables una vez emitidos", "bbox": [ 91, 406, 121, 413 ], "parent": null },
+        { "id": "STR-CN-02", "text": "Sistema no debe funcionar offline", "bbox": [ 146, 405, 180, 414 ], "parent": null },
+        { "id": "STR-CN-03", "text": "web intuitiva para personal no técnico", "bbox": [ 215, 408, 227, 415 ], "parent": null }
+      ]
+    }
+  ],
+  "empty_sections": [],
+  "notes": []
+}
