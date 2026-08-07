@@ -1,0 +1,304 @@
+{
+    "delivery_id":  "E1",
+    "canvas":  "functional",
+    "variant":  "back",
+    "traces":  [
+                   {
+                       "sticky_id":  "FNC-BCK-BC-01",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-BACK-001",
+                       "literal_text":  "Compras"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-BC-02",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-BACK-002",
+                       "literal_text":  "Recepción de Mercadería"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-BC-03",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-BACK-003",
+                       "literal_text":  "Reposición"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-BC-04",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-BACK-004",
+                       "literal_text":  "Inventario (stock, lotes, ubicaciones)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-BC-05",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-BACK-005",
+                       "literal_text":  "Control Regulatorio (libro de productos controlados)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-BC-06",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-BACK-006",
+                       "literal_text":  "Módulo de Alertas y Notificaciones"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-BC-07",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-BACK-007",
+                       "literal_text":  "Integración POS Venta"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-BC-08",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-BACK-008",
+                       "literal_text":  "Vencimientos (canje/destrucción)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-AI-01",
+                       "canvas":  "functional",
+                       "section":  "API inputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-001",
+                       "literal_text":  "Registro de transacciones desde el POS"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-AI-02",
+                       "canvas":  "functional",
+                       "section":  "API inputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-002",
+                       "literal_text":  "Peticiones del Frontend Bundle"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DO-01",
+                       "canvas":  "functional",
+                       "section":  "Data objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BCK-001",
+                       "literal_text":  "Producto (categoría, controlado: sí/no)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DO-02",
+                       "canvas":  "functional",
+                       "section":  "Data objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BCK-002",
+                       "literal_text":  "Lote (número, vencimiento, saldo)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DO-03",
+                       "canvas":  "functional",
+                       "section":  "Data objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BCK-003",
+                       "literal_text":  "Informe de productos controlados en \"Vencidos\""
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DO-04",
+                       "canvas":  "functional",
+                       "section":  "Data objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BCK-004",
+                       "literal_text":  "Guía de despacho (canje o destrucción)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DO-05",
+                       "canvas":  "functional",
+                       "section":  "Data objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BCK-005",
+                       "literal_text":  "Movimiento de inventario (lote, vencimiento, saldo, ubicación)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DO-06",
+                       "canvas":  "functional",
+                       "section":  "Data objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BCK-006",
+                       "literal_text":  "Tipo de Movimiento de inventario (venta, compra, nota de crédito, canje, destrucción)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DO-07",
+                       "canvas":  "functional",
+                       "section":  "Data objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BCK-007",
+                       "literal_text":  "Orden de Compra (estados: emitida, enviada, confirmada por proveedor, recepcionada)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-AO-01",
+                       "canvas":  "functional",
+                       "section":  "API outputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-003",
+                       "literal_text":  "Consulta de stock disponible por producto (POS)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DE-01",
+                       "canvas":  "functional",
+                       "section":  "Data exports",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-004",
+                       "literal_text":  "PDF/Excel de orden de compra"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DE-02",
+                       "canvas":  "functional",
+                       "section":  "Data exports",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-005",
+                       "literal_text":  "Guía de despacho impresa (canje o destrucción)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DE-03",
+                       "canvas":  "functional",
+                       "section":  "Data exports",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-006",
+                       "literal_text":  "Informe de productos controlados \"Vencidos\""
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-DE-04",
+                       "canvas":  "functional",
+                       "section":  "Data exports",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-007",
+                       "literal_text":  "Libro de control de productos controlados"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-ET-01",
+                       "canvas":  "functional",
+                       "section":  "Event triggers",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-008",
+                       "literal_text":  "Cruce de umbral de stock crítico → Event Handler"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-H-01",
+                       "canvas":  "functional",
+                       "section":  "Helpers",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-009",
+                       "literal_text":  "Servicio de envío de correo (alertas)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-H-02",
+                       "canvas":  "functional",
+                       "section":  "Helpers",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-010",
+                       "literal_text":  "Servicio de generación de PDF (OC, guías, informes)"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-J-01",
+                       "canvas":  "functional",
+                       "section":  "Jobs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-011",
+                       "literal_text":  "Job diario - Revisión de Stock vs. punto de reorden → alerta por correo"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-J-02",
+                       "canvas":  "functional",
+                       "section":  "Jobs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-012",
+                       "literal_text":  "Job de vencimientos: revisión periódica de productos próximos a vencer → reporte semanal y traslado a \"Vencidos\""
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-J-03",
+                       "canvas":  "functional",
+                       "section":  "Jobs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-BCK-GENERAL-013",
+                       "literal_text":  "Job mensual: genera e imprime el libro de control de productos controlados"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-C-01",
+                       "canvas":  "functional",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-BCK-001",
+                       "literal_text":  "Registros de transacciones inmutables una vez emitidos"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-C-02",
+                       "canvas":  "functional",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-BCK-002",
+                       "literal_text":  "Antes de emitir una OC se deben considerar las OC pendientes de recepción del mismo producto"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-C-03",
+                       "canvas":  "functional",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-BCK-003",
+                       "literal_text":  "Descuento de stock real ocurre solo al emitir guía de despacho (canje) o al ejecutar destrucción"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-C-04",
+                       "canvas":  "functional",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-BCK-004",
+                       "literal_text":  "Productos en ubicación \"Vencidos\" no disponibles para venta ni compra, pero sí cuentan en inventario"
+                   },
+                   {
+                       "sticky_id":  "FNC-BCK-TS-01",
+                       "canvas":  "functional",
+                       "section":  "Technology stack",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-BACK-009",
+                       "literal_text":  "Backend: monolito Node.js / DB: PostgreSQL / Infra: GCP"
+                   }
+               ]
+}

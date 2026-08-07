@@ -1,0 +1,22 @@
+{
+  "source":"[TDS DIS 2026] Equipo 2.pdf#p4","canvas":"structural","template":"7Cs v1.1 June 2026","delivery_id":"E1","header":{"system":null,"organization":null,"canvas":null,"version":null,"date":null},
+  "notes":[{"text":"Mencionó Asignar responsabilidades a cada Bundle","bbox":[269,38,576,51]}],
+  "sections":[
+    {"name":"Data input interfaces to frontend bundles","stickies":[{"id":"STR-DIF-01","text":"Interfaz web","bbox":[81,163,247,259],"parent":null}]},
+    {"name":"Frontend bundles","stickies":[{"id":"STR-FB-01","text":"Single Page Application (SPA) web con diseño responsivo","bbox":[655,142,853,255],"parent":null}]},
+    {"name":"Data output interfaces from frontend bundles","stickies":[{"id":"STR-DOF-01","text":"UI WEB (SPA) responsiva","bbox":[1560,161,1652,255],"parent":null}]},
+    {"name":"Data input interfaces to backend bundles","stickies":[{"id":"STR-DIB-01","text":"API REST","bbox":[83,330,172,420],"parent":null}]},
+    {"name":"Backend bundles","stickies":[{"id":"STR-BB-01","text":"Aplicación monolítica server-side (Node.js), con posible evolución futura a microservicios","bbox":[677,318,875,432],"parent":null}]},
+    {"name":"Data output interfaces from backend bundles","stickies":[{"id":"STR-DOB-01","text":"API REST","bbox":[1578,343,1670,438],"parent":null}]},
+    {"name":"Data input interfaces to repository bundles","stickies":[]},
+    {"name":"Repository bundles","stickies":[{"id":"STR-RB-01","text":"PostgreSQL (Cloud SQL)","bbox":[681,481,785,589],"parent":null}]},
+    {"name":"Data output interfaces from repository bundles","stickies":[]},
+    {"name":"Data input interfaces to platform & infrastructure bundles","stickies":[]},
+    {"name":"Platform & Infrastructure bundles","stickies":[{"id":"STR-PIB-01","text":"Google Cloud Platform (GCP)","bbox":[681,667,786,775],"parent":null}]},
+    {"name":"Data output interfaces from platform & infrastructure bundles","stickies":[]},
+    {"name":"Data input interfaces to device bundles","stickies":[{"id":"STR-DID-01","text":"Lectura de código de barras","bbox":[84,843,182,944],"parent":null}]},
+    {"name":"Device bundles","stickies":[{"id":"STR-DB-01","text":"Lector de código de barras","bbox":[680,835,786,943],"parent":null},{"id":"STR-DB-02","text":"Impresora","bbox":[824,835,930,943],"parent":null}]},
+    {"name":"Data output interfaces from device bundles","stickies":[{"id":"STR-DOD-01","text":"Libro de control mensual","bbox":[1485,843,1578,936],"parent":null},{"id":"STR-DOD-02","text":"PDF/Excel OC","bbox":[1609,845,1748,925],"parent":null}]},
+    {"name":"Constraints","stickies":[{"id":"STR-C-01","text":"Registros de transacciones inmutables una vez emitidos","bbox":[213,1008,320,1115],"parent":null},{"id":"STR-C-02","text":"Sistema no debe funcionar offline","bbox":[357,1008,463,1115],"parent":null},{"id":"STR-C-03","text":"web intuitiva para personal no técnico","bbox":[500,1008,607,1115],"parent":null}]}
+  ],"empty_sections":[]
+}

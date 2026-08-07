@@ -1,0 +1,16 @@
+{
+  "source":"[TDS DIS 2026] Equipo 2.pdf#p6","canvas":"deployment","template":"7Cs v1.1 June 2026","delivery_id":"E1","header":{"system":null,"organization":null,"canvas":null,"version":null,"date":null},
+  "sections":[
+    {"name":"Environments","stickies":[{"id":"DEP-ENV-01","text":"Desarrollo","bbox":[37,187,149,302],"parent":null},{"id":"DEP-ENV-02","text":"Producción","bbox":[37,326,149,441],"parent":null}]},
+    {"name":"Bundles","stickies":[{"id":"DEP-BUN-01","text":"Frontend: SPA (aplicación web con diseño responsivo)","bbox":[353,112,530,213],"parent":null},{"id":"DEP-BUN-02","text":"Backend: monolito (Node.js)","bbox":[596,120,759,215],"parent":null}]},
+    {"name":"Middleware","stickies":[{"id":"DEP-MID-01","text":"Cloud SQL for PostgreSQL","bbox":[353,227,496,310],"parent":null}]},
+    {"name":"Runtime","stickies":[{"id":"DEP-RUN-01","text":"Node.js","bbox":[373,325,453,406],"parent":null}]},
+    {"name":"Orchestration & scheduling","stickies":[{"id":"DEP-OS-01","text":"Cloud Run (backend)","bbox":[481,432,631,517],"parent":null},{"id":"DEP-OS-02","text":"Cloud Scheduler (Jobs)","bbox":[665,432,809,515],"parent":null}]},
+    {"name":"Container runtimes","stickies":[{"id":"DEP-CR-01","text":"Docker","bbox":[448,533,528,614],"parent":null},{"id":"DEP-CR-02","text":"GCP: Cloud Run, Cloud SQL, Cloud Scheduler, Cloud Storage","bbox":[565,531,737,629],"parent":null}]},
+    {"name":"Operating systems","stickies":[]},{"name":"Virtualization engines","stickies":[]},{"name":"Cloud abstractions","stickies":[]},{"name":"Hardware","stickies":[]},{"name":"Locations","stickies":[]},
+    {"name":"Networks","stickies":[{"id":"DEP-NET-01","text":"Acceso vía HTTPS","bbox":[1506,248,1625,370],"parent":null}]},
+    {"name":"Installation","stickies":[{"id":"DEP-INS-01","text":"Despliegue en GCP a cargo del equipo de desarrollo/implementación","bbox":[1742,235,1915,413],"parent":null}]},
+    {"name":"Operation","stickies":[{"id":"DEP-OPE-01","text":"Soporte y operación en producción a cargo de personal de soporte del cliente","bbox":[1743,710,1927,896],"parent":null}]},
+    {"name":"Constraints","stickies":[{"id":"DEP-CON-01","text":"Inmutabilidad de registros de transacciones","bbox":[42,673,191,758],"parent":null},{"id":"DEP-CON-02","text":"Sin soporte offline","bbox":[42,822,191,909],"parent":null}]}
+  ],"empty_sections":[]
+}

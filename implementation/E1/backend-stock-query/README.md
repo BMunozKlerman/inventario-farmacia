@@ -1,33 +1,15 @@
 # Backend Stock Query
 
-Slice ejecutable del bundle backend Node.js para un único post-it:
-`FNC-BCK-APO-01`, trazado a `FR-BCK-003`.
+Bundle Node.js de una sola capacidad: `FNC-BCK-AO-01`, trazada a `FR-BCK-GENERAL-003`. Implementa la consulta de stock disponible por producto para POS.
 
-## Ejecutar con Docker
+## Ejecución
 
-```powershell
-.\run.cmd
-```
+Con Docker: `.\run.cmd`. Solo construir y probar: `.\run.cmd --build-only`.
 
-Para construir y ejecutar las pruebas sin iniciar el servidor:
+Con Node.js 20+: `npm test` y `npm start`.
 
 ```powershell
-.\run.cmd --build-only
+Invoke-RestMethod -Uri 'http://localhost:8080/api/v1/pos/stock/MED-001?idLocal=LOCAL-001&idUbicacion=VENTA' -Headers @{Authorization='Bearer local-demo-token'; 'x-demo-scopes'='stock.read stock.lot.read'; 'X-Correlation-ID'='demo-001'}
 ```
 
-Consultar desde otra consola:
-
-```powershell
-Invoke-RestMethod `
-  -Uri 'http://localhost:8080/api/stock?productCode=SKU-001&locationId=LOCAL-001' `
-  -Headers @{'x-api-key'='local-demo-key'}
-```
-
-## Ejecutar con Node.js 20+
-
-```powershell
-npm test
-npm start
-```
-
-El repositorio en memoria es un adaptador de demostración. Puede reemplazarse por PostgreSQL sin cambiar el contrato HTTP ni la lógica de cálculo validada.
+El adaptador local usa datos en memoria y `x-demo-scopes`, por lo que la demostración no exige PostgreSQL ni GCP. En producción, el stack declarado sigue siendo Node.js/PostgreSQL/GCP y el gateway OAuth 2.0 Client Credentials debe validar el JWT (máximo 60 minutos), ámbito y permisos.

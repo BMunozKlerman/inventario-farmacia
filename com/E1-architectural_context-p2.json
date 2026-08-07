@@ -1,0 +1,23 @@
+{
+  "source":"[TDS DIS 2026] Equipo 2.pdf#p2","canvas":"architectural_context","template":"7Cs v1.1 June 2026","delivery_id":"E1","header":{"system":null,"organization":null,"canvas":null,"version":null,"date":null},
+  "sections":[
+    {"name":"Stakeholders","stickies":[
+      {"id":"ACC-ST-01","text":"QF DT","bbox":[62,163,121,225],"parent":null},{"id":"ACC-ST-02","text":"QF Complementario","bbox":[143,162,255,226],"parent":null},{"id":"ACC-ST-03","text":"Auxiliar de Farmacia","bbox":[293,162,353,225],"parent":null},{"id":"ACC-ST-04","text":"Bodeguero","bbox":[377,174,437,225],"parent":null},{"id":"ACC-ST-05","text":"Laboratorio / Droguería","bbox":[488,162,544,225],"parent":null},{"id":"ACC-ST-06","text":"SEREMI","bbox":[576,169,632,226],"parent":null},{"id":"ACC-ST-07","text":"ISP","bbox":[665,169,721,229],"parent":null},{"id":"ACC-ST-08","text":"Cliente","bbox":[763,169,819,225],"parent":null},{"id":"ACC-ST-09","text":"MINSAL","bbox":[851,169,910,225],"parent":null},{"id":"ACC-ST-10","text":"Empresa externa certificada (destrucción de productos controlados)","bbox":[963,161,1042,241],"parent":null}
+    ]},
+    {"name":"Business strategy","stickies":[
+      {"id":"ACC-BS-01","text":"Resolver el problema de inventario","bbox":[57,339,112,401],"parent":null},{"id":"ACC-BS-02","text":"Prevenir Quiebre de Stock","bbox":[135,339,195,401],"parent":null},{"id":"ACC-BS-03","text":"Minimizar Merma","bbox":[224,339,283,401],"parent":null}
+    ]},
+    {"name":"IT strategy","stickies":[{"id":"ACC-IT-01","text":"Plataforma web responsivo","bbox":[1003,338,1115,403],"parent":null},{"id":"ACC-IT-02","text":"Integración con el POS","bbox":[1156,334,1268,400],"parent":null}]},
+    {"name":"Business goals & drivers","stickies":[{"id":"ACC-BG-01","text":"Reducción de pérdidas económicas por merma","bbox":[56,513,168,578],"parent":null},{"id":"ACC-BG-02","text":"Maximización de ventas disponibles","bbox":[198,513,311,578],"parent":null},{"id":"ACC-BG-03","text":"Eficiencia operativa","bbox":[353,528,414,578],"parent":null}]},
+    {"name":"Technology goals & drivers","stickies":[{"id":"ACC-TG-01","text":"Reducir errores derivados del registro manual/paralelo","bbox":[1013,510,1152,573],"parent":null},{"id":"ACC-TG-02","text":"Eliminar la doble digitación entre POS e inventario","bbox":[1167,509,1278,574],"parent":null}]},
+    {"name":"Business standards & policies","stickies":[
+      {"id":"ACC-BP-01","text":"Norma Técnica N°147","bbox":[97,682,157,743],"parent":null},{"id":"ACC-BP-02","text":"Decreto Supremo N°404, 405, 466","bbox":[198,681,310,745],"parent":null},{"id":"ACC-BP-03","text":"Exigencia del ISP de llevar libro de control físico para productos controlados","bbox":[362,680,473,745],"parent":null},{"id":"ACC-BP-04","text":"Fiscalización y normativa aplicada por MINSAL, SEREMI, ISP","bbox":[509,670,591,748],"parent":null},{"id":"ACC-BP-05","text":"Autorización ISP de destrucción de productos controlados","bbox":[629,676,712,746],"parent":null}
+    ]},
+    {"name":"Technology standards & policies","stickies":[{"id":"ACC-TP-01","text":"APIs para que el POS registre transacciones (venta, notas de crédito, entre otras) y consulta stock disponible","bbox":[1003,667,1159,755],"parent":null}]},
+    {"name":"Situational constraints","stickies":[
+      {"id":"ACC-SC-01","text":"Un solo local","bbox":[94,864,153,924],"parent":null},{"id":"ACC-SC-02","text":"Sin integración con proveedores externos","bbox":[185,857,298,924],"parent":null},{"id":"ACC-SC-03","text":"Los registros de transacciones, una vez emitidos, no se pueden modificar ni alterar","bbox":[331,855,443,925],"parent":null},{"id":"ACC-SC-04","text":"Personal no técnico operando el sistema.","bbox":[486,855,597,925],"parent":null},{"id":"ACC-SC-05","text":"Autorización ISP y ejecución de destrucción por empresa externa certificada","bbox":[642,848,779,927],"parent":null}
+    ]},
+    {"name":"Business principles","stickies":[{"id":"ACC-BPR-01","text":"Trazabilidad completa de los productos","bbox":[82,1029,195,1094],"parent":null}]},
+    {"name":"Technical principles","stickies":[{"id":"ACC-TPR-01","text":"Sistema intuitivo","bbox":[1041,1041,1101,1102],"parent":null},{"id":"ACC-TPR-02","text":"Integridad de los registros","bbox":[1161,1037,1221,1101],"parent":null},{"id":"ACC-TPR-03","text":"no alteración de registros de transacciones una vez emitidos.","bbox":[1235,1034,1348,1099],"parent":null}]}
+  ],"empty_sections":[]
+}

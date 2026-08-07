@@ -1,0 +1,448 @@
+{
+    "delivery_id":  "E1",
+    "canvas":  "business_context",
+    "variant":  null,
+    "traces":  [
+                   {
+                       "sticky_id":  "BUS-BPS-01",
+                       "canvas":  "business_context",
+                       "section":  "Business products \u0026 services",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-001",
+                       "literal_text":  "Productos farmacológicos (medicamentos)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BPS-02",
+                       "canvas":  "business_context",
+                       "section":  "Business products \u0026 services",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-002",
+                       "literal_text":  "Vitaminas"
+                   },
+                   {
+                       "sticky_id":  "BUS-BPS-03",
+                       "canvas":  "business_context",
+                       "section":  "Business products \u0026 services",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-003",
+                       "literal_text":  "Suplementos alimenticios"
+                   },
+                   {
+                       "sticky_id":  "BUS-BPS-04",
+                       "canvas":  "business_context",
+                       "section":  "Business products \u0026 services",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-004",
+                       "literal_text":  "Insumos médicos"
+                   },
+                   {
+                       "sticky_id":  "BUS-BPS-05",
+                       "canvas":  "business_context",
+                       "section":  "Business products \u0026 services",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-005",
+                       "literal_text":  "Dispensación de medicamentos con receta"
+                   },
+                   {
+                       "sticky_id":  "BUS-BPS-06",
+                       "canvas":  "business_context",
+                       "section":  "Business products \u0026 services",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-006",
+                       "literal_text":  "Asesoría farmacológica a clientes"
+                   },
+                   {
+                       "sticky_id":  "BUS-BUA-01",
+                       "canvas":  "business_context",
+                       "section":  "Business units \u0026 actors",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-007",
+                       "literal_text":  "Farmacia (unidad de negocio)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BUA-02",
+                       "canvas":  "business_context",
+                       "section":  "Business units \u0026 actors",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-008",
+                       "literal_text":  "Cliente (comprador final)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BUA-03",
+                       "canvas":  "business_context",
+                       "section":  "Business units \u0026 actors",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-009",
+                       "literal_text":  "Laboratorio (fabricante)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BUA-04",
+                       "canvas":  "business_context",
+                       "section":  "Business units \u0026 actors",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-010",
+                       "literal_text":  "Droguería (distribuidor mayorista intermedio)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BUA-05",
+                       "canvas":  "business_context",
+                       "section":  "Business units \u0026 actors",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-011",
+                       "literal_text":  "SEREMI de Salud (autoridad sanitaria regional)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BUA-06",
+                       "canvas":  "business_context",
+                       "section":  "Business units \u0026 actors",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-012",
+                       "literal_text":  "ISP (Instituto de Salud Pública)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BUA-07",
+                       "canvas":  "business_context",
+                       "section":  "Business units \u0026 actors",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-013",
+                       "literal_text":  "Empresa externa certificada (destrucción de productos controlados)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BUA-08",
+                       "canvas":  "business_context",
+                       "section":  "Business units \u0026 actors",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-014",
+                       "literal_text":  "MINSAL"
+                   },
+                   {
+                       "sticky_id":  "BUS-BR-01",
+                       "canvas":  "business_context",
+                       "section":  "Business roles",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-015",
+                       "literal_text":  "QF Director Técnico (QF DT)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BR-02",
+                       "canvas":  "business_context",
+                       "section":  "Business roles",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-016",
+                       "literal_text":  "QF Complementario"
+                   },
+                   {
+                       "sticky_id":  "BUS-BR-03",
+                       "canvas":  "business_context",
+                       "section":  "Business roles",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-017",
+                       "literal_text":  "Auxiliar de Farmacia (AF)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BR-04",
+                       "canvas":  "business_context",
+                       "section":  "Business roles",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-018",
+                       "literal_text":  "Bodeguero"
+                   },
+                   {
+                       "sticky_id":  "BUS-BO-01",
+                       "canvas":  "business_context",
+                       "section":  "Business objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BUSINESS_CONTEXT-001",
+                       "literal_text":  "Producto (con lote, vencimiento, categoría, condición de controlado)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BO-02",
+                       "canvas":  "business_context",
+                       "section":  "Business objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BUSINESS_CONTEXT-002",
+                       "literal_text":  "Receta médica"
+                   },
+                   {
+                       "sticky_id":  "BUS-BO-03",
+                       "canvas":  "business_context",
+                       "section":  "Business objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BUSINESS_CONTEXT-003",
+                       "literal_text":  "Orden de compra (estados: emitida, enviada, confirmada por proveedor, recepcionada)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BO-04",
+                       "canvas":  "business_context",
+                       "section":  "Business objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BUSINESS_CONTEXT-004",
+                       "literal_text":  "Informe/registro de destrucción de productos controlados"
+                   },
+                   {
+                       "sticky_id":  "BUS-BO-05",
+                       "canvas":  "business_context",
+                       "section":  "Business objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BUSINESS_CONTEXT-005",
+                       "literal_text":  "Registro de movimiento de inventario (venta, compra, nota de crédito, canje, destrucción)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BO-06",
+                       "canvas":  "business_context",
+                       "section":  "Business objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BUSINESS_CONTEXT-006",
+                       "literal_text":  "Boleta de venta"
+                   },
+                   {
+                       "sticky_id":  "BUS-BO-07",
+                       "canvas":  "business_context",
+                       "section":  "Business objects",
+                       "rule":  "entidad",
+                       "target":  "fragment",
+                       "target_id":  "ENT-BUSINESS_CONTEXT-007",
+                       "literal_text":  "Guía de despacho (canje o destrucción)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BP-01",
+                       "canvas":  "business_context",
+                       "section":  "Business processes",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-019",
+                       "literal_text":  "Compra/reabastecimiento: orden de compra según puntos de stock"
+                   },
+                   {
+                       "sticky_id":  "BUS-BP-02",
+                       "canvas":  "business_context",
+                       "section":  "Business processes",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-020",
+                       "literal_text":  "Recepción de mercadería"
+                   },
+                   {
+                       "sticky_id":  "BUS-BP-03",
+                       "canvas":  "business_context",
+                       "section":  "Business processes",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-021",
+                       "literal_text":  "Dispensación / venta"
+                   },
+                   {
+                       "sticky_id":  "BUS-BP-04",
+                       "canvas":  "business_context",
+                       "section":  "Business processes",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-022",
+                       "literal_text":  "Gestión de vencimientos: canje o destrucción"
+                   },
+                   {
+                       "sticky_id":  "BUS-BP-05",
+                       "canvas":  "business_context",
+                       "section":  "Business processes",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-023",
+                       "literal_text":  "Reposición (bodega -\u003e sala de venta)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BP-06",
+                       "canvas":  "business_context",
+                       "section":  "Business processes",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-024",
+                       "literal_text":  "Inventario"
+                   },
+                   {
+                       "sticky_id":  "BUS-BF-01",
+                       "canvas":  "business_context",
+                       "section":  "Business functions",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-025",
+                       "literal_text":  "Custodia y control de medicamentos"
+                   },
+                   {
+                       "sticky_id":  "BUS-BF-02",
+                       "canvas":  "business_context",
+                       "section":  "Business functions",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-026",
+                       "literal_text":  "Asesoría/atención farmacológica"
+                   },
+                   {
+                       "sticky_id":  "BUS-BIE-01",
+                       "canvas":  "business_context",
+                       "section":  "Business infrastructure \u0026 equipment",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-027",
+                       "literal_text":  "Sistema POS (registra venta, pago e IVA, emite boleta)"
+                   },
+                   {
+                       "sticky_id":  "BUS-BIE-02",
+                       "canvas":  "business_context",
+                       "section":  "Business infrastructure \u0026 equipment",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-028",
+                       "literal_text":  "Un computador por Auxiliar de Farmacia"
+                   },
+                   {
+                       "sticky_id":  "BUS-BIE-03",
+                       "canvas":  "business_context",
+                       "section":  "Business infrastructure \u0026 equipment",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-029",
+                       "literal_text":  "Un computador compartido para los 2 QF"
+                   },
+                   {
+                       "sticky_id":  "BUS-BIE-04",
+                       "canvas":  "business_context",
+                       "section":  "Business infrastructure \u0026 equipment",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-030",
+                       "literal_text":  "Tablet o celular para el Bodeguero"
+                   },
+                   {
+                       "sticky_id":  "BUS-BIE-05",
+                       "canvas":  "business_context",
+                       "section":  "Business infrastructure \u0026 equipment",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-031",
+                       "literal_text":  "Registros de inventario en papel impreso y hojas de cálculos"
+                   },
+                   {
+                       "sticky_id":  "BUS-BL-01",
+                       "canvas":  "business_context",
+                       "section":  "Business locations",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-032",
+                       "literal_text":  "Un único local"
+                   },
+                   {
+                       "sticky_id":  "BUS-BFA-01",
+                       "canvas":  "business_context",
+                       "section":  "Business facilities",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-033",
+                       "literal_text":  "Bodega"
+                   },
+                   {
+                       "sticky_id":  "BUS-BFA-02",
+                       "canvas":  "business_context",
+                       "section":  "Business facilities",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-034",
+                       "literal_text":  "Sala de venta"
+                   },
+                   {
+                       "sticky_id":  "BUS-BFA-03",
+                       "canvas":  "business_context",
+                       "section":  "Business facilities",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-035",
+                       "literal_text":  "Ubicación física \"Vencidos\""
+                   },
+                   {
+                       "sticky_id":  "BUS-SFA-01",
+                       "canvas":  "business_context",
+                       "section":  "System’s functional areas",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-036",
+                       "literal_text":  "Gestión de productos y stock"
+                   },
+                   {
+                       "sticky_id":  "BUS-SFA-02",
+                       "canvas":  "business_context",
+                       "section":  "System’s functional areas",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-037",
+                       "literal_text":  "Gestión de entradas y salidas"
+                   },
+                   {
+                       "sticky_id":  "BUS-SFA-03",
+                       "canvas":  "business_context",
+                       "section":  "System’s functional areas",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-038",
+                       "literal_text":  "Gestión de compras"
+                   },
+                   {
+                       "sticky_id":  "BUS-SFA-04",
+                       "canvas":  "business_context",
+                       "section":  "System’s functional areas",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-039",
+                       "literal_text":  "Alertas y monitoreo (stock mínimo, vencimientos)"
+                   },
+                   {
+                       "sticky_id":  "BUS-SFA-05",
+                       "canvas":  "business_context",
+                       "section":  "System’s functional areas",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-040",
+                       "literal_text":  "Trazabilidad e historial de movimientos"
+                   },
+                   {
+                       "sticky_id":  "BUS-SFA-06",
+                       "canvas":  "business_context",
+                       "section":  "System’s functional areas",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-041",
+                       "literal_text":  "Gestión de vencimientos: canje y destrucción de productos"
+                   },
+                   {
+                       "sticky_id":  "BUS-SFA-07",
+                       "canvas":  "business_context",
+                       "section":  "System’s functional areas",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-BUSINESS_CONTEXT-042",
+                       "literal_text":  "Generación de libro de control de controlados"
+                   }
+               ]
+}

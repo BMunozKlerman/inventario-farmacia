@@ -1,0 +1,142 @@
+{
+    "delivery_id":  "E1",
+    "canvas":  "deployment",
+    "variant":  null,
+    "traces":  [
+                   {
+                       "sticky_id":  "DEP-ENV-01",
+                       "canvas":  "deployment",
+                       "section":  "Environments",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-001",
+                       "literal_text":  "Desarrollo"
+                   },
+                   {
+                       "sticky_id":  "DEP-ENV-02",
+                       "canvas":  "deployment",
+                       "section":  "Environments",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-002",
+                       "literal_text":  "Producción"
+                   },
+                   {
+                       "sticky_id":  "DEP-BUN-01",
+                       "canvas":  "deployment",
+                       "section":  "Bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-003",
+                       "literal_text":  "Frontend: SPA (aplicación web con diseño responsivo)"
+                   },
+                   {
+                       "sticky_id":  "DEP-BUN-02",
+                       "canvas":  "deployment",
+                       "section":  "Bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-004",
+                       "literal_text":  "Backend: monolito (Node.js)"
+                   },
+                   {
+                       "sticky_id":  "DEP-MID-01",
+                       "canvas":  "deployment",
+                       "section":  "Middleware",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-005",
+                       "literal_text":  "Cloud SQL for PostgreSQL"
+                   },
+                   {
+                       "sticky_id":  "DEP-RUN-01",
+                       "canvas":  "deployment",
+                       "section":  "Runtime",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-006",
+                       "literal_text":  "Node.js"
+                   },
+                   {
+                       "sticky_id":  "DEP-OS-01",
+                       "canvas":  "deployment",
+                       "section":  "Orchestration \u0026 scheduling",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-007",
+                       "literal_text":  "Cloud Run (backend)"
+                   },
+                   {
+                       "sticky_id":  "DEP-OS-02",
+                       "canvas":  "deployment",
+                       "section":  "Orchestration \u0026 scheduling",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-008",
+                       "literal_text":  "Cloud Scheduler (Jobs)"
+                   },
+                   {
+                       "sticky_id":  "DEP-CR-01",
+                       "canvas":  "deployment",
+                       "section":  "Container runtimes",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-009",
+                       "literal_text":  "Docker"
+                   },
+                   {
+                       "sticky_id":  "DEP-CR-02",
+                       "canvas":  "deployment",
+                       "section":  "Container runtimes",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-010",
+                       "literal_text":  "GCP: Cloud Run, Cloud SQL, Cloud Scheduler, Cloud Storage"
+                   },
+                   {
+                       "sticky_id":  "DEP-NET-01",
+                       "canvas":  "deployment",
+                       "section":  "Networks",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-011",
+                       "literal_text":  "Acceso vía HTTPS"
+                   },
+                   {
+                       "sticky_id":  "DEP-INS-01",
+                       "canvas":  "deployment",
+                       "section":  "Installation",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-012",
+                       "literal_text":  "Despliegue en GCP a cargo del equipo de desarrollo/implementación"
+                   },
+                   {
+                       "sticky_id":  "DEP-OPE-01",
+                       "canvas":  "deployment",
+                       "section":  "Operation",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-DEPLOYMENT-013",
+                       "literal_text":  "Soporte y operación en producción a cargo de personal de soporte del cliente"
+                   },
+                   {
+                       "sticky_id":  "DEP-CON-01",
+                       "canvas":  "deployment",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-DEPLOYMENT-001",
+                       "literal_text":  "Inmutabilidad de registros de transacciones"
+                   },
+                   {
+                       "sticky_id":  "DEP-CON-02",
+                       "canvas":  "deployment",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-DEPLOYMENT-002",
+                       "literal_text":  "Sin soporte offline"
+                   }
+               ]
+}

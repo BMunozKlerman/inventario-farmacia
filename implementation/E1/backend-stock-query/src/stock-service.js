@@ -1,65 +1,33 @@
 'use strict';
 
 class StockError extends Error {
-  constructor(status, code, message, field) {
-    super(message);
-    this.status = status;
-    this.code = code;
-    this.field = field;
-  }
+  constructor(status, code, message, field) { super(message); this.status = status; this.code = code; this.field = field; }
 }
 
 const inventory = [
-  {
-    productCode: 'SKU-001',
-    description: 'Paracetamol 500 mg',
-    locationId: 'LOCAL-001',
-    unit: 'unidad',
-    enabled: true,
-    updatedAt: '2026-08-05T00:00:00.000Z',
-    lots: [
-      { lot: 'LOT-A', expiresAt: '2027-06-30', physical: 120, reserved: 10, committed: 5, blocked: 0, unfit: 0 },
-      { lot: 'LOT-V', expiresAt: '2026-01-31', physical: 20, reserved: 0, committed: 0, blocked: 0, unfit: 20 }
-    ]
-  }
+  { codigoProducto: 'MED-001', descripcion: 'Paracetamol 500 mg', idEstablecimiento: 'EST-001', idLocal: 'LOCAL-001', idUbicacion: 'VENTA', unidadMedida: 'unidad', enabled: true, fechaHoraActualizacion: '2026-08-05T00:00:00.000Z', lots: [
+    { numeroLote: 'LOT-B', fechaVencimiento: '2027-12-31', fisico: 40, reservado: 0, comprometido: 5, bloqueado: 0, noApto: 0 },
+    { numeroLote: 'LOT-A', fechaVencimiento: '2027-06-30', fisico: 120, reservado: 10, comprometido: 5, bloqueado: 0, noApto: 0 }
+  ] },
+  { codigoProducto: 'MED-001', descripcion: 'Paracetamol 500 mg', idEstablecimiento: 'EST-001', idLocal: 'LOCAL-001', idUbicacion: 'Vencidos', unidadMedida: 'unidad', enabled: true, fechaHoraActualizacion: '2026-08-05T00:00:00.000Z', lots: [
+    { numeroLote: 'LOT-V', fechaVencimiento: '2026-01-31', fisico: 20, reservado: 0, comprometido: 0, bloqueado: 0, noApto: 20 }
+  ] }
 ];
 
-function available(value) {
-  return Math.max(0, value.physical - value.reserved - value.committed - value.blocked - value.unfit);
-}
+const available = (lot) => Math.max(0, lot.fisico - lot.reservado - lot.comprometido - lot.bloqueado - lot.noApto);
 
-function queryStock(productCode, locationId) {
-  if (!productCode) throw new StockError(400, 'MISSING_PRODUCT_CODE', 'productCode es obligatorio', 'productCode');
-  if (!locationId) throw new StockError(400, 'MISSING_LOCATION_ID', 'locationId es obligatorio', 'locationId');
-
-  const product = inventory.find((item) => item.productCode === productCode && item.locationId === locationId);
-  if (!product) throw new StockError(404, 'STOCK_NOT_FOUND', 'Producto o local inexistente');
-  if (!product.enabled) throw new StockError(409, 'PRODUCT_DISABLED', 'El producto no está habilitado para el local');
-
-  const totals = product.lots.reduce((sum, lot) => ({
-    physical: sum.physical + lot.physical,
-    reserved: sum.reserved + lot.reserved,
-    committed: sum.committed + lot.committed,
-    blocked: sum.blocked + lot.blocked,
-    unfit: sum.unfit + lot.unfit,
-    available: sum.available + available(lot)
-  }), { physical: 0, reserved: 0, committed: 0, blocked: 0, unfit: 0, available: 0 });
-
-  return {
-    productCode: product.productCode,
-    description: product.description,
-    locationId: product.locationId,
-    physicalStock: totals.physical,
-    reservedStock: totals.reserved,
-    committedStock: totals.committed,
-    blockedStock: totals.blocked,
-    unfitStock: totals.unfit,
-    availableStock: Math.max(0, totals.available),
-    unit: product.unit,
-    availabilityStatus: totals.available > 0 ? 'Disponible' : 'Sin stock',
-    updatedAt: product.updatedAt,
-    lots: product.lots.map((lot) => ({ lot: lot.lot, expiresAt: lot.expiresAt, availableStock: available(lot) }))
-  };
+function queryStock(codigoProducto, idLocal, idUbicacion, includeLots = true) {
+  if (!codigoProducto) throw new StockError(400, 'PARAMETRO_OBLIGATORIO', 'codigoProducto es obligatorio', 'codigoProducto');
+  if (!idLocal) throw new StockError(400, 'PARAMETRO_OBLIGATORIO', 'idLocal es obligatorio', 'idLocal');
+  if (!idUbicacion) throw new StockError(400, 'PARAMETRO_OBLIGATORIO', 'idUbicacion es obligatorio', 'idUbicacion');
+  const product = inventory.find((item) => item.codigoProducto === codigoProducto && item.idLocal === idLocal && item.idUbicacion === idUbicacion);
+  if (!product) throw new StockError(404, 'RECURSO_NO_ENCONTRADO', 'Producto, local o ubicación inexistente');
+  if (!product.enabled) throw new StockError(409, 'PRODUCTO_NO_HABILITADO', 'El producto no está habilitado para la ubicación');
+  const t = product.lots.reduce((s, x) => ({ fisico:s.fisico+x.fisico, reservado:s.reservado+x.reservado, comprometido:s.comprometido+x.comprometido, bloqueado:s.bloqueado+x.bloqueado, noApto:s.noApto+x.noApto, disponible:s.disponible+available(x) }), { fisico:0, reservado:0, comprometido:0, bloqueado:0, noApto:0, disponible:0 });
+  const vencidos = product.idUbicacion === 'Vencidos';
+  const result = { codigoProducto:product.codigoProducto, descripcion:product.descripcion, idEstablecimiento:product.idEstablecimiento, idLocal:product.idLocal, idUbicacion:product.idUbicacion, stockFisico:t.fisico, stockReservado:t.reservado, stockComprometido:t.comprometido, stockBloqueado:t.bloqueado, stockNoAptoVenta:t.noApto, stockDisponible:vencidos?0:t.disponible, unidadMedida:product.unidadMedida, estadoDisponibilidad:vencidos?'No disponible para venta':(t.disponible?'Disponible':'Sin stock'), fechaHoraActualizacion:product.fechaHoraActualizacion };
+  if (includeLots) result.lotes = product.lots.map((x) => ({ numeroLote:x.numeroLote, fechaVencimiento:x.fechaVencimiento, stockDisponibleLote:vencidos?0:available(x) })).sort((a,b) => a.fechaVencimiento.localeCompare(b.fechaVencimiento));
+  return result;
 }
 
 module.exports = { StockError, queryStock };

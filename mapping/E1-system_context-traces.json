@@ -1,0 +1,169 @@
+{
+    "delivery_id":  "E1",
+    "canvas":  "system_context",
+    "variant":  null,
+    "traces":  [
+                   {
+                       "sticky_id":  "SCC-SU-01",
+                       "canvas":  "system_context",
+                       "section":  "Source users",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-SYSTEM_CONTEXT-001",
+                       "literal_text":  "QF DT"
+                   },
+                   {
+                       "sticky_id":  "SCC-SU-02",
+                       "canvas":  "system_context",
+                       "section":  "Source users",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-SYSTEM_CONTEXT-002",
+                       "literal_text":  "QF Complementario"
+                   },
+                   {
+                       "sticky_id":  "SCC-SU-03",
+                       "canvas":  "system_context",
+                       "section":  "Source users",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-SYSTEM_CONTEXT-003",
+                       "literal_text":  "Bodeguero"
+                   },
+                   {
+                       "sticky_id":  "SCC-UDI-01",
+                       "canvas":  "system_context",
+                       "section":  "User data input interfaces",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-SYSTEM_CONTEXT-004",
+                       "literal_text":  "UI WEB (SPA) responsiva"
+                   },
+                   {
+                       "sticky_id":  "SCC-UDO-01",
+                       "canvas":  "system_context",
+                       "section":  "User data output interfaces",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-SYSTEM_CONTEXT-005",
+                       "literal_text":  "UI WEB (SPA) responsiva"
+                   },
+                   {
+                       "sticky_id":  "SCC-TU-01",
+                       "canvas":  "system_context",
+                       "section":  "Target users",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-SYSTEM_CONTEXT-006",
+                       "literal_text":  "QF DT"
+                   },
+                   {
+                       "sticky_id":  "SCC-TU-02",
+                       "canvas":  "system_context",
+                       "section":  "Target users",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-SYSTEM_CONTEXT-007",
+                       "literal_text":  "QF Complementario"
+                   },
+                   {
+                       "sticky_id":  "SCC-TU-03",
+                       "canvas":  "system_context",
+                       "section":  "Target users",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-SYSTEM_CONTEXT-008",
+                       "literal_text":  "Bodeguero"
+                   },
+                   {
+                       "sticky_id":  "SCC-SS-01",
+                       "canvas":  "system_context",
+                       "section":  "Source systems",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-SYSTEM_CONTEXT-009",
+                       "literal_text":  "POS"
+                   },
+                   {
+                       "sticky_id":  "SCC-SDI-01",
+                       "canvas":  "system_context",
+                       "section":  "System data input interfaces",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-SYSTEM_CONTEXT-010",
+                       "literal_text":  "API Transacciones POS"
+                   },
+                   {
+                       "sticky_id":  "SCC-SDO-01",
+                       "canvas":  "system_context",
+                       "section":  "System data output interfaces",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-SYSTEM_CONTEXT-011",
+                       "literal_text":  "API Consulta Stock POS"
+                   },
+                   {
+                       "sticky_id":  "SCC-TS-01",
+                       "canvas":  "system_context",
+                       "section":  "Target systems",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-SYSTEM_CONTEXT-012",
+                       "literal_text":  "POS"
+                   },
+                   {
+                       "sticky_id":  "SCC-RDO-01",
+                       "canvas":  "system_context",
+                       "section":  "Repository data output interfaces",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-SYSTEM_CONTEXT-013",
+                       "literal_text":  "Generación de Libro de Controlados"
+                   },
+                   {
+                       "sticky_id":  "SCC-TR-01",
+                       "canvas":  "system_context",
+                       "section":  "Target repositories",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-SYSTEM_CONTEXT-014",
+                       "literal_text":  "Libro físico de productos controlados (ISP)"
+                   },
+                   {
+                       "sticky_id":  "SCC-SD-01",
+                       "canvas":  "system_context",
+                       "section":  "Source devices",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-SYSTEM_CONTEXT-015",
+                       "literal_text":  "Lector de código de barras"
+                   },
+                   {
+                       "sticky_id":  "SCC-DDI-01",
+                       "canvas":  "system_context",
+                       "section":  "Device data input interfaces",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-SYSTEM_CONTEXT-016",
+                       "literal_text":  "Lectura de código de barra"
+                   },
+                   {
+                       "sticky_id":  "SCC-DDO-01",
+                       "canvas":  "system_context",
+                       "section":  "Device data output interfaces",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-SYSTEM_CONTEXT-017",
+                       "literal_text":  "impresión mensual sobre hojas foliadas/timbradas"
+                   },
+                   {
+                       "sticky_id":  "SCC-DDO-02",
+                       "canvas":  "system_context",
+                       "section":  "Device data output interfaces",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-SYSTEM_CONTEXT-018",
+                       "literal_text":  "Generación de OC PDF / Excel"
+                   }
+               ]
+}

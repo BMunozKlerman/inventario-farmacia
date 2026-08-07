@@ -10,9 +10,28 @@ if($RequireClarificationGate){
 }
 $comFiles = @(Get-ChildItem -LiteralPath (RepoPath $ComDirectory) -Filter "$DeliveryId-*.json" -File -ErrorAction SilentlyContinue)
 if (-not $comFiles) { throw "No COM files for $DeliveryId" }
-$stickies = @($comFiles | ForEach-Object { $c=Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8|ConvertFrom-Json; @($c.sections)|ForEach-Object{@($_.stickies)|ForEach-Object{$_.id}} } | Sort-Object -Unique)
+$stickyIds = [System.Collections.Generic.List[string]]::new()
+foreach ($comFile in $comFiles) {
+  $com = Get-Content -LiteralPath $comFile.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
+  foreach ($section in @($com.sections)) {
+    foreach ($sticky in @($section.stickies)) { $stickyIds.Add([string]$sticky.id) }
+  }
+}
+$stickies = @($stickyIds | Sort-Object -Unique)
 $traceFiles = @(Get-ChildItem -LiteralPath (RepoPath $MappingDirectory) -Filter "$DeliveryId-*-traces.json" -File -ErrorAction SilentlyContinue)
-$traces = @($traceFiles | ForEach-Object { $t=Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8|ConvertFrom-Json; if($t.traces){@($t.traces)}else{@($t)} } | ForEach-Object {$_.sticky_id} | Where-Object {$_ -in $stickies} | Sort-Object -Unique)
+$traceIds = [System.Collections.Generic.List[string]]::new()
+foreach ($traceFile in $traceFiles) {
+  $traceDocument = Get-Content -LiteralPath $traceFile.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
+  if ($traceDocument -isnot [array] -and $traceDocument.PSObject.Properties.Name -contains 'traces') {
+    $traceItems = @($traceDocument.traces)
+  } else {
+    $traceItems = @($traceDocument)
+  }
+  foreach ($trace in $traceItems) {
+    if ($trace.sticky_id -in $stickies) { $traceIds.Add([string]$trace.sticky_id) }
+  }
+}
+$traces = @($traceIds | Sort-Object -Unique)
 $covered = if($FalsifiabilityCheck){[Math]::Max(0, $stickies.Count-1)}else{$traces.Count}
 $coverage = if($stickies.Count){$covered/$stickies.Count}else{1}
 $passed = $coverage -eq 1

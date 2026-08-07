@@ -17,6 +17,32 @@ $env:PYTHONIOENCODING='utf-8'
 $root=[IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot))
 function RepoPath($p){if([IO.Path]::IsPathRooted($p)){[IO.Path]::GetFullPath($p)}else{[IO.Path]::GetFullPath((Join-Path $root $p))}}
 
+$allowedRootDirectories=@(
+  '.agents','.codex','.git','audit','clarifications','com','composed','config',
+  'evidence','implementation','mapping','resources','scripts','tests','tmp','tools'
+)
+
+function Get-RootDirectoryPaths {
+  @(Get-ChildItem -LiteralPath $root -Directory -Force -ErrorAction Stop | ForEach-Object FullName)
+}
+
+function Remove-UnexpectedNewRootDirectories([string[]]$Before) {
+  $rootPrefix=$root.TrimEnd('\')+'\'
+  $unexpected=@(Get-RootDirectoryPaths | Where-Object {
+    $_ -notin $Before -and [IO.Path]::GetFileName($_) -notin $allowedRootDirectories
+  })
+  foreach($directory in $unexpected){
+    $resolved=[IO.Path]::GetFullPath($directory)
+    if(-not $resolved.StartsWith($rootPrefix,[StringComparison]::OrdinalIgnoreCase)){
+      throw "Ruta inesperada fuera del repositorio: $resolved"
+    }
+    Remove-Item -LiteralPath $resolved -Recurse -Force
+  }
+  if($unexpected.Count){
+    throw "Codex intento crear $($unexpected.Count) carpeta(s) no autorizada(s) en la raiz; se eliminaron y la etapa fue detenida."
+  }
+}
+
 $pdf=RepoPath $PdfPath
 $resources=(RepoPath 'resources').TrimEnd('\')+'\'
 if(-not $pdf.StartsWith($resources,[StringComparison]::OrdinalIgnoreCase)){throw 'El PDF debe estar dentro de resources/'}
@@ -50,11 +76,15 @@ if(-not $renderer){throw 'Poppler no está disponible: falta pdftoppm.exe'}
 $rendererExe=if($renderer.Source){$renderer.Source}else{$renderer.FullName}
 
 function Invoke-CodexPrompt([string]$Prompt,[array]$ImagePaths=@()){
+  $rootDirectoriesBefore=Get-RootDirectoryPaths
   $codexArgs=@('exec','--ephemeral','--color','never','-s','workspace-write','-C',$root)
   foreach($image in $ImagePaths){$codexArgs+=@('-i',$image)}
   $oldAction=$ErrorActionPreference
   try{$ErrorActionPreference='Continue'; $Prompt|& $codexExe @codexArgs '-'; $exitCode=$LASTEXITCODE}
-  finally{$ErrorActionPreference=$oldAction}
+  finally{
+    $ErrorActionPreference=$oldAction
+    Remove-UnexpectedNewRootDirectories $rootDirectoriesBefore
+  }
   if($exitCode -ne 0){throw "codex exec falló: $exitCode"}
 }
 
@@ -120,6 +150,7 @@ Procesa el delivery '$DeliveryId' desde las imágenes adjuntas del PDF resources
 Escribe siempre clarifications/$DeliveryId-reading.json con {"delivery_id":"$DeliveryId","phase":"reading","questions":[]}. Ante texto ilegible, clasificación insegura o datos imprescindibles ambiguos, agrega preguntas concretas con {"id","question","reason","status":"open"}, usa ids estables Q-READ-NNN y no adivines. Si existen respuestas en clarifications/$DeliveryId-answers.json, analízalas junto con la imagen: marca la pregunta resolved sólo si la respuesta permite una transcripción o clasificación inequívoca; de lo contrario mantenla open y reformúlala.
 
 No modifiques resources/, .agents/, scripts/, config/, tests/, tools/, README.md ni AGENTS.md.
+No crees carpetas en la raiz ni carpetas basadas en texto de post-its. Escribe unicamente en evidence/, com/ y clarifications/.
 "@
 Invoke-CodexPrompt $readingPrompt $images
 while($true){
@@ -158,6 +189,7 @@ $transformPrompt=@"
 Procesa el delivery '$DeliveryId' usando 7cs-com-transform. Lee únicamente com/$DeliveryId-*.json y, si existe, clarifications/$DeliveryId-answers.json. Lee y escribe todos los archivos como UTF-8; conserva tildes, eñes y signos de apertura. Si usas PowerShell para leer archivos, especifica `-Encoding UTF8`. Genera o reemplaza los artefactos mapping/$DeliveryId-*; no leas el PDF ni evidence/ y no compongas todavía.
 
 Escribe siempre clarifications/$DeliveryId-transformation.json con {"delivery_id":"$DeliveryId","phase":"transformation","questions":[]}. Toda decisión ausente que impida requisitos verificables debe ser una pregunta concreta {"id","question","reason","status":"open"} con id estable Q-TRANS-NNN. Analiza cada respuesta contra los COM: marca resolved sólo si es suficiente; si no, mantén open y reformula la pregunta. No inventes. No continúes a composición.
+No crees carpetas en la raiz ni carpetas basadas en texto de post-its. Escribe unicamente en mapping/ y clarifications/.
 "@
 Invoke-CodexPrompt $transformPrompt
 while($true){
@@ -170,6 +202,7 @@ while($true){
 Write-Host '[5/7] Componiendo el entregable'
 $composePrompt=@"
 Compone el delivery '$DeliveryId' mediante 7cs-spec-compose. Lee sólo mapping/$DeliveryId-*, clarifications/$DeliveryId-transformation.json y clarifications/$DeliveryId-answers.json, siempre como UTF-8. Conserva tildes, eñes y signos de apertura; si usas PowerShell, especifica `-Encoding UTF8`. Verifica que no existan preguntas open; si existe alguna, falla sin escribir composed/. Si la compuerta está cerrada, genera todos los artefactos composed/$DeliveryId-* y déjalos listos para 7cs-spec-audit. No leas el PDF ni evidence/.
+No crees carpetas en la raiz. Escribe unicamente en composed/.
 "@
 Invoke-CodexPrompt $composePrompt
 
@@ -180,6 +213,7 @@ if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
 Write-Host '[7/7] Generando un slice backend ejecutable'
 $implementationPrompt=@"
 Usa 7cs-backend-slice para el delivery '$DeliveryId'. Selecciona exactamente un post-it Functional Back con contrato suficiente y genera un único bundle bajo implementation/$DeliveryId/backend-<capability>/. Debe incluir código fuente Node.js, pruebas sin dependencias innecesarias, Dockerfile, run.cmd, README.md y traceability.json. Implementa solamente esa funcionalidad; no vuelvas al PDF, no cambies COM, mapping, composed ni clarifications y no generes frontend.
+No crees carpetas en la raiz. Escribe unicamente bajo implementation/$DeliveryId/.
 "@
 Invoke-CodexPrompt $implementationPrompt
 Write-Host 'Pipeline completo: PASS'

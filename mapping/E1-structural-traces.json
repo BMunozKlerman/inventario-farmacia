@@ -1,0 +1,151 @@
+{
+    "delivery_id":  "E1",
+    "canvas":  "structural",
+    "variant":  null,
+    "traces":  [
+                   {
+                       "sticky_id":  "STR-DIF-01",
+                       "canvas":  "structural",
+                       "section":  "Data input interfaces to frontend bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-001",
+                       "literal_text":  "Interfaz web"
+                   },
+                   {
+                       "sticky_id":  "STR-FB-01",
+                       "canvas":  "structural",
+                       "section":  "Frontend bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-002",
+                       "literal_text":  "Single Page Application (SPA) web con diseño responsivo"
+                   },
+                   {
+                       "sticky_id":  "STR-DOF-01",
+                       "canvas":  "structural",
+                       "section":  "Data output interfaces from frontend bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-003",
+                       "literal_text":  "UI WEB (SPA) responsiva"
+                   },
+                   {
+                       "sticky_id":  "STR-DIB-01",
+                       "canvas":  "structural",
+                       "section":  "Data input interfaces to backend bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-004",
+                       "literal_text":  "API REST"
+                   },
+                   {
+                       "sticky_id":  "STR-BB-01",
+                       "canvas":  "structural",
+                       "section":  "Backend bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-005",
+                       "literal_text":  "Aplicación monolítica server-side (Node.js), con posible evolución futura a microservicios"
+                   },
+                   {
+                       "sticky_id":  "STR-DOB-01",
+                       "canvas":  "structural",
+                       "section":  "Data output interfaces from backend bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-006",
+                       "literal_text":  "API REST"
+                   },
+                   {
+                       "sticky_id":  "STR-RB-01",
+                       "canvas":  "structural",
+                       "section":  "Repository bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-007",
+                       "literal_text":  "PostgreSQL (Cloud SQL)"
+                   },
+                   {
+                       "sticky_id":  "STR-PIB-01",
+                       "canvas":  "structural",
+                       "section":  "Platform \u0026 Infrastructure bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-008",
+                       "literal_text":  "Google Cloud Platform (GCP)"
+                   },
+                   {
+                       "sticky_id":  "STR-DID-01",
+                       "canvas":  "structural",
+                       "section":  "Data input interfaces to device bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-009",
+                       "literal_text":  "Lectura de código de barras"
+                   },
+                   {
+                       "sticky_id":  "STR-DB-01",
+                       "canvas":  "structural",
+                       "section":  "Device bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-010",
+                       "literal_text":  "Lector de código de barras"
+                   },
+                   {
+                       "sticky_id":  "STR-DB-02",
+                       "canvas":  "structural",
+                       "section":  "Device bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-011",
+                       "literal_text":  "Impresora"
+                   },
+                   {
+                       "sticky_id":  "STR-DOD-01",
+                       "canvas":  "structural",
+                       "section":  "Data output interfaces from device bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-012",
+                       "literal_text":  "Libro de control mensual"
+                   },
+                   {
+                       "sticky_id":  "STR-DOD-02",
+                       "canvas":  "structural",
+                       "section":  "Data output interfaces from device bundles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-STRUCTURAL-013",
+                       "literal_text":  "PDF/Excel OC"
+                   },
+                   {
+                       "sticky_id":  "STR-C-01",
+                       "canvas":  "structural",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-STRUCTURAL-001",
+                       "literal_text":  "Registros de transacciones inmutables una vez emitidos"
+                   },
+                   {
+                       "sticky_id":  "STR-C-02",
+                       "canvas":  "structural",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-STRUCTURAL-002",
+                       "literal_text":  "Sistema no debe funcionar offline"
+                   },
+                   {
+                       "sticky_id":  "STR-C-03",
+                       "canvas":  "structural",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-STRUCTURAL-003",
+                       "literal_text":  "web intuitiva para personal no técnico"
+                   }
+               ]
+}

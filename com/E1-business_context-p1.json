@@ -1,0 +1,77 @@
+{
+  "source": "[TDS DIS 2026] Equipo 2.pdf#p1",
+  "canvas": "business_context",
+  "template": "7Cs v1.1 June 2026",
+  "delivery_id": "E1",
+  "header": {"system": null, "organization": null, "canvas": null, "version": null, "date": null},
+  "sections": [
+    {"name":"Business products & services","stickies":[
+      {"id":"BUS-BPS-01","text":"Productos farmacológicos (medicamentos)","bbox":[40,151,117,230],"parent":null},
+      {"id":"BUS-BPS-02","text":"Vitaminas","bbox":[147,154,217,226],"parent":null},
+      {"id":"BUS-BPS-03","text":"Suplementos alimenticios","bbox":[242,155,312,226],"parent":null},
+      {"id":"BUS-BPS-04","text":"Insumos médicos","bbox":[337,155,407,226],"parent":null},
+      {"id":"BUS-BPS-05","text":"Dispensación de medicamentos con receta","bbox":[432,155,503,226],"parent":null},
+      {"id":"BUS-BPS-06","text":"Asesoría farmacológica a clientes","bbox":[528,155,598,226],"parent":null}
+    ]},
+    {"name":"Business units & actors","stickies":[
+      {"id":"BUS-BUA-01","text":"Farmacia (unidad de negocio)","bbox":[41,300,120,380],"parent":null},
+      {"id":"BUS-BUA-02","text":"Cliente (comprador final)","bbox":[148,300,229,380],"parent":null},
+      {"id":"BUS-BUA-03","text":"Laboratorio (fabricante)","bbox":[257,300,337,380],"parent":null},
+      {"id":"BUS-BUA-04","text":"Droguería (distribuidor mayorista intermedio)","bbox":[365,300,445,380],"parent":null},
+      {"id":"BUS-BUA-05","text":"SEREMI de Salud (autoridad sanitaria regional)","bbox":[473,300,553,380],"parent":null},
+      {"id":"BUS-BUA-06","text":"ISP (Instituto de Salud Pública)","bbox":[581,300,661,380],"parent":null},
+      {"id":"BUS-BUA-07","text":"Empresa externa certificada (destrucción de productos controlados)","bbox":[689,300,769,380],"parent":null},
+      {"id":"BUS-BUA-08","text":"MINSAL","bbox":[797,300,877,380],"parent":null}
+    ]},
+    {"name":"Business roles","stickies":[
+      {"id":"BUS-BR-01","text":"QF Director Técnico (QF DT)","bbox":[1006,308,1074,376],"parent":null},
+      {"id":"BUS-BR-02","text":"QF Complementario","bbox":[1097,307,1226,378],"parent":null},
+      {"id":"BUS-BR-03","text":"Auxiliar de Farmacia (AF)","bbox":[1248,308,1317,376],"parent":null},
+      {"id":"BUS-BR-04","text":"Bodeguero","bbox":[1349,308,1418,376],"parent":null}
+    ]},
+    {"name":"Business objects","stickies":[
+      {"id":"BUS-BO-01","text":"Producto (con lote, vencimiento, categoría, condición de controlado)","bbox":[51,449,138,536],"parent":null},
+      {"id":"BUS-BO-02","text":"Receta médica","bbox":[168,449,254,536],"parent":null},
+      {"id":"BUS-BO-03","text":"Orden de compra (estados: emitida, enviada, confirmada por proveedor, recepcionada)","bbox":[283,449,370,536],"parent":null},
+      {"id":"BUS-BO-04","text":"Informe/registro de destrucción de productos controlados","bbox":[404,449,490,536],"parent":null},
+      {"id":"BUS-BO-05","text":"Registro de movimiento de inventario (venta, compra, nota de crédito, canje, destrucción)","bbox":[51,565,138,651],"parent":null},
+      {"id":"BUS-BO-06","text":"Boleta de venta","bbox":[171,563,257,651],"parent":null},
+      {"id":"BUS-BO-07","text":"Guía de despacho (canje o destrucción)","bbox":[283,565,369,650],"parent":null}
+    ]},
+    {"name":"Business processes","stickies":[
+      {"id":"BUS-BP-01","text":"Compra/reabastecimiento: orden de compra según puntos de stock","bbox":[1000,449,1081,530],"parent":null},
+      {"id":"BUS-BP-02","text":"Recepción de mercadería","bbox":[1108,443,1189,530],"parent":null},
+      {"id":"BUS-BP-03","text":"Dispensación / venta","bbox":[1206,442,1289,530],"parent":null},
+      {"id":"BUS-BP-04","text":"Gestión de vencimientos: canje o destrucción","bbox":[1307,448,1388,530],"parent":null},
+      {"id":"BUS-BP-05","text":"Reposición (bodega -> sala de venta)","bbox":[1405,449,1486,530],"parent":null},
+      {"id":"BUS-BP-06","text":"Inventario","bbox":[1501,441,1592,536],"parent":null}
+    ]},
+    {"name":"Business functions","stickies":[
+      {"id":"BUS-BF-01","text":"Custodia y control de medicamentos","bbox":[1000,596,1085,681],"parent":null},
+      {"id":"BUS-BF-02","text":"Asesoría/atención farmacológica","bbox":[1109,596,1189,682],"parent":null}
+    ]},
+    {"name":"Business infrastructure & equipment","stickies":[
+      {"id":"BUS-BIE-01","text":"Sistema POS (registra venta, pago e IVA, emite boleta)","bbox":[63,753,132,823],"parent":null},
+      {"id":"BUS-BIE-02","text":"Un computador por Auxiliar de Farmacia","bbox":[156,752,225,823],"parent":null},
+      {"id":"BUS-BIE-03","text":"Un computador compartido para los 2 QF","bbox":[250,752,319,823],"parent":null},
+      {"id":"BUS-BIE-04","text":"Tablet o celular para el Bodeguero","bbox":[343,753,412,823],"parent":null},
+      {"id":"BUS-BIE-05","text":"Registros de inventario en papel impreso y hojas de cálculos","bbox":[436,753,505,823],"parent":null}
+    ]},
+    {"name":"Business locations","stickies":[{"id":"BUS-BL-01","text":"Un único local","bbox":[63,895,137,970],"parent":null}]},
+    {"name":"Business facilities","stickies":[
+      {"id":"BUS-BFA-01","text":"Bodega","bbox":[1009,891,1079,962],"parent":null},
+      {"id":"BUS-BFA-02","text":"Sala de venta","bbox":[1102,891,1172,962],"parent":null},
+      {"id":"BUS-BFA-03","text":"Ubicación física \"Vencidos\"","bbox":[1194,890,1324,964],"parent":null}
+    ]},
+    {"name":"System’s functional areas","stickies":[
+      {"id":"BUS-SFA-01","text":"Gestión de productos y stock","bbox":[74,1038,168,1134],"parent":null},
+      {"id":"BUS-SFA-02","text":"Gestión de entradas y salidas","bbox":[200,1038,293,1134],"parent":null},
+      {"id":"BUS-SFA-03","text":"Gestión de compras","bbox":[326,1038,419,1134],"parent":null},
+      {"id":"BUS-SFA-04","text":"Alertas y monitoreo (stock mínimo, vencimientos)","bbox":[449,1035,623,1135],"parent":null},
+      {"id":"BUS-SFA-05","text":"Trazabilidad e historial de movimientos","bbox":[650,1035,824,1135],"parent":null},
+      {"id":"BUS-SFA-06","text":"Gestión de vencimientos: canje y destrucción de productos","bbox":[852,1035,1027,1135],"parent":null},
+      {"id":"BUS-SFA-07","text":"Generación de libro de control de controlados","bbox":[1054,1035,1228,1135],"parent":null}
+    ]}
+  ],
+  "empty_sections": []
+}

@@ -1,0 +1,250 @@
+{
+    "delivery_id":  "E1",
+    "canvas":  "functional",
+    "variant":  "front",
+    "traces":  [
+                   {
+                       "sticky_id":  "FNC-FRT-BC-01",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-FRONT-001",
+                       "literal_text":  "Compras"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-BC-02",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-FRONT-002",
+                       "literal_text":  "Recepción de Mercadería"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-BC-03",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-FRONT-003",
+                       "literal_text":  "Reposición"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-BC-04",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-FRONT-004",
+                       "literal_text":  "Inventario (stock, lotes, ubicaciones)"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-BC-05",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-FRONT-005",
+                       "literal_text":  "Control Regulatorio (libro de productos controlados)"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-BC-06",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-FRONT-006",
+                       "literal_text":  "Reportes"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-BC-07",
+                       "canvas":  "functional",
+                       "section":  "Bundles \u0026 components",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-FRONT-007",
+                       "literal_text":  "Vencimientos (canje/destrucción)"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UI-01",
+                       "canvas":  "functional",
+                       "section":  "User inputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-001",
+                       "literal_text":  "Registro de recepción de mercadería"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UI-02",
+                       "canvas":  "functional",
+                       "section":  "User inputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-002",
+                       "literal_text":  "Autorización y firma de guía de recepción de mercadería"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UI-03",
+                       "canvas":  "functional",
+                       "section":  "User inputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-003",
+                       "literal_text":  "Registro de reposición"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UI-04",
+                       "canvas":  "functional",
+                       "section":  "User inputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-004",
+                       "literal_text":  "Generación de OC (considerando pendientes de recepción)"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UI-05",
+                       "canvas":  "functional",
+                       "section":  "User inputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-005",
+                       "literal_text":  "Registro de destrucción"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UI-06",
+                       "canvas":  "functional",
+                       "section":  "User inputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-006",
+                       "literal_text":  "Registro de canje"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-AI-01",
+                       "canvas":  "functional",
+                       "section":  "API inputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-007",
+                       "literal_text":  "Respuestas del Backend Bundle vía API REST"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-EH-01",
+                       "canvas":  "functional",
+                       "section":  "Event handlers",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-008",
+                       "literal_text":  "Stock Critico para Dashboard"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UV-01",
+                       "canvas":  "functional",
+                       "section":  "User visualizations, reports \u0026 notifications",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-009",
+                       "literal_text":  "Dashboard de stock (fila roja para stock crítico)"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UV-02",
+                       "canvas":  "functional",
+                       "section":  "User visualizations, reports \u0026 notifications",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-010",
+                       "literal_text":  "Reporte semanal de próximos a vencer"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UV-03",
+                       "canvas":  "functional",
+                       "section":  "User visualizations, reports \u0026 notifications",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-011",
+                       "literal_text":  "Historial de movimientos por producto/lote"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UV-04",
+                       "canvas":  "functional",
+                       "section":  "User visualizations, reports \u0026 notifications",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-012",
+                       "literal_text":  "Reporte mensual de compras"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-UV-05",
+                       "canvas":  "functional",
+                       "section":  "User visualizations, reports \u0026 notifications",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-013",
+                       "literal_text":  "Alerta urgente en dashboard"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-AO-01",
+                       "canvas":  "functional",
+                       "section":  "API outputs",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-014",
+                       "literal_text":  "Peticiones hacia el Backend Bundle vía API REST"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-DE-01",
+                       "canvas":  "functional",
+                       "section":  "Data exports",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-015",
+                       "literal_text":  "PDF/Excel de orden de compra"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-DE-02",
+                       "canvas":  "functional",
+                       "section":  "Data exports",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-016",
+                       "literal_text":  "Guía de despacho impresa (canje o destrucción)"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-DE-03",
+                       "canvas":  "functional",
+                       "section":  "Data exports",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-017",
+                       "literal_text":  "Informe de productos controlados \"Vencidos\""
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-DE-04",
+                       "canvas":  "functional",
+                       "section":  "Data exports",
+                       "rule":  "requisito_funcional",
+                       "target":  "fragment",
+                       "target_id":  "FR-FRT-GENERAL-018",
+                       "literal_text":  "Libro de control de productos controlados"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-C-01",
+                       "canvas":  "functional",
+                       "section":  "Constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-FRT-001",
+                       "literal_text":  "Sin soporte offline"
+                   },
+                   {
+                       "sticky_id":  "FNC-FRT-TS-01",
+                       "canvas":  "functional",
+                       "section":  "Technology stack",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-FUNCTIONAL-FRONT-008",
+                       "literal_text":  "Frontend: SPA responsiva"
+                   }
+               ]
+}

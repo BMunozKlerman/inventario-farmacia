@@ -1,0 +1,19 @@
+{
+  "source":"[TDS DIS 2026] Equipo 2.pdf#p5","canvas":"functional","variant":"front","template":"7Cs v1.1 June 2026","delivery_id":"E1","header":{"system":null,"organization":null,"canvas":"Functional Canvas Front","version":null,"date":null},
+  "sections":[
+    {"name":"Bundles & components","stickies":[{"id":"FNC-FRT-BC-01","text":"Compras","bbox":[19,162,98,242],"parent":null},{"id":"FNC-FRT-BC-02","text":"Recepción de Mercadería","bbox":[124,162,203,255],"parent":null},{"id":"FNC-FRT-BC-03","text":"Reposición","bbox":[19,269,98,348],"parent":null},{"id":"FNC-FRT-BC-04","text":"Inventario (stock, lotes, ubicaciones)","bbox":[124,269,203,348],"parent":null},{"id":"FNC-FRT-BC-05","text":"Control Regulatorio (libro de productos controlados)","bbox":[19,374,98,454],"parent":null},{"id":"FNC-FRT-BC-06","text":"Reportes","bbox":[124,374,203,454],"parent":null},{"id":"FNC-FRT-BC-07","text":"Vencimientos (canje/destrucción)","bbox":[124,486,203,566],"parent":null}]},
+    {"name":"User inputs","stickies":[{"id":"FNC-FRT-UI-01","text":"Registro de recepción de mercadería","bbox":[215,147,269,218],"parent":null},{"id":"FNC-FRT-UI-02","text":"Autorización y firma de guía de recepción de mercadería","bbox":[279,147,376,218],"parent":null},{"id":"FNC-FRT-UI-03","text":"Registro de reposición","bbox":[215,224,269,276],"parent":null},{"id":"FNC-FRT-UI-04","text":"Generación de OC (considerando pendientes de recepción)","bbox":[279,224,376,276],"parent":null},{"id":"FNC-FRT-UI-05","text":"Registro de destrucción","bbox":[397,146,489,210],"parent":null},{"id":"FNC-FRT-UI-06","text":"Registro de canje","bbox":[397,218,489,265],"parent":null}]},
+    {"name":"UI-processing inputs","stickies":[]},
+    {"name":"API inputs","stickies":[{"id":"FNC-FRT-AI-01","text":"Respuestas del Backend Bundle vía API REST","bbox":[241,499,327,587],"parent":null}]},
+    {"name":"Data imports","stickies":[]},
+    {"name":"Event handlers","stickies":[{"id":"FNC-FRT-EH-01","text":"Stock Critico para Dashboard","bbox":[232,840,329,940],"parent":null}]},
+    {"name":"Data objects","stickies":[]},
+    {"name":"User visualizations, reports & notifications","stickies":[{"id":"FNC-FRT-UV-01","text":"Dashboard de stock (fila roja para stock crítico)","bbox":[1257,147,1328,220],"parent":null},{"id":"FNC-FRT-UV-02","text":"Reporte semanal de próximos a vencer","bbox":[1337,147,1442,220],"parent":null},{"id":"FNC-FRT-UV-03","text":"Historial de movimientos por producto/lote","bbox":[1457,147,1559,219],"parent":null},{"id":"FNC-FRT-UV-04","text":"Reporte mensual de compras","bbox":[1337,222,1442,278],"parent":null},{"id":"FNC-FRT-UV-05","text":"Alerta urgente en dashboard","bbox":[1457,222,1559,278],"parent":null}]},
+    {"name":"UI-processing outputs","stickies":[]},
+    {"name":"API outputs","stickies":[{"id":"FNC-FRT-AO-01","text":"Peticiones hacia el Backend Bundle vía API REST","bbox":[1266,493,1352,580],"parent":null}]},
+    {"name":"Data exports","stickies":[{"id":"FNC-FRT-DE-01","text":"PDF/Excel de orden de compra","bbox":[1265,663,1351,734],"parent":null},{"id":"FNC-FRT-DE-02","text":"Guía de despacho impresa (canje o destrucción)","bbox":[1360,663,1428,734],"parent":null},{"id":"FNC-FRT-DE-03","text":"Informe de productos controlados \"Vencidos\"","bbox":[1453,663,1522,734],"parent":null},{"id":"FNC-FRT-DE-04","text":"Libro de control de productos controlados","bbox":[1547,663,1616,734],"parent":null}]},
+    {"name":"Event triggers","stickies":[]},{"name":"Helpers","stickies":[]},{"name":"Jobs","stickies":[]},
+    {"name":"Constraints","stickies":[{"id":"FNC-FRT-C-01","text":"Sin soporte offline","bbox":[67,750,147,831],"parent":null}]},
+    {"name":"Technology stack","stickies":[{"id":"FNC-FRT-TS-01","text":"Frontend: SPA responsiva","bbox":[1785,266,1948,433],"parent":null}]}
+  ],"empty_sections":[]
+}

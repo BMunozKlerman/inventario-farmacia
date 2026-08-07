@@ -1,0 +1,322 @@
+{
+    "delivery_id":  "E1",
+    "canvas":  "architectural_context",
+    "variant":  null,
+    "traces":  [
+                   {
+                       "sticky_id":  "ACC-ST-01",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-001",
+                       "literal_text":  "QF DT"
+                   },
+                   {
+                       "sticky_id":  "ACC-ST-02",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-002",
+                       "literal_text":  "QF Complementario"
+                   },
+                   {
+                       "sticky_id":  "ACC-ST-03",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-003",
+                       "literal_text":  "Auxiliar de Farmacia"
+                   },
+                   {
+                       "sticky_id":  "ACC-ST-04",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-004",
+                       "literal_text":  "Bodeguero"
+                   },
+                   {
+                       "sticky_id":  "ACC-ST-05",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-005",
+                       "literal_text":  "Laboratorio / Droguería"
+                   },
+                   {
+                       "sticky_id":  "ACC-ST-06",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-006",
+                       "literal_text":  "SEREMI"
+                   },
+                   {
+                       "sticky_id":  "ACC-ST-07",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-007",
+                       "literal_text":  "ISP"
+                   },
+                   {
+                       "sticky_id":  "ACC-ST-08",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-008",
+                       "literal_text":  "Cliente"
+                   },
+                   {
+                       "sticky_id":  "ACC-ST-09",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-009",
+                       "literal_text":  "MINSAL"
+                   },
+                   {
+                       "sticky_id":  "ACC-ST-10",
+                       "canvas":  "architectural_context",
+                       "section":  "Stakeholders",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-010",
+                       "literal_text":  "Empresa externa certificada (destrucción de productos controlados)"
+                   },
+                   {
+                       "sticky_id":  "ACC-BS-01",
+                       "canvas":  "architectural_context",
+                       "section":  "Business strategy",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-011",
+                       "literal_text":  "Resolver el problema de inventario"
+                   },
+                   {
+                       "sticky_id":  "ACC-BS-02",
+                       "canvas":  "architectural_context",
+                       "section":  "Business strategy",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-012",
+                       "literal_text":  "Prevenir Quiebre de Stock"
+                   },
+                   {
+                       "sticky_id":  "ACC-BS-03",
+                       "canvas":  "architectural_context",
+                       "section":  "Business strategy",
+                       "rule":  "contexto",
+                       "target":  "fragment",
+                       "target_id":  "CTX-ARCHITECTURAL_CONTEXT-013",
+                       "literal_text":  "Minimizar Merma"
+                   },
+                   {
+                       "sticky_id":  "ACC-IT-01",
+                       "canvas":  "architectural_context",
+                       "section":  "IT strategy",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-ARCHITECTURAL_CONTEXT-014",
+                       "literal_text":  "Plataforma web responsivo"
+                   },
+                   {
+                       "sticky_id":  "ACC-IT-02",
+                       "canvas":  "architectural_context",
+                       "section":  "IT strategy",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-ARCHITECTURAL_CONTEXT-015",
+                       "literal_text":  "Integración con el POS"
+                   },
+                   {
+                       "sticky_id":  "ACC-BG-01",
+                       "canvas":  "architectural_context",
+                       "section":  "Business goals \u0026 drivers",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-001",
+                       "literal_text":  "Reducción de pérdidas económicas por merma"
+                   },
+                   {
+                       "sticky_id":  "ACC-BG-02",
+                       "canvas":  "architectural_context",
+                       "section":  "Business goals \u0026 drivers",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-002",
+                       "literal_text":  "Maximización de ventas disponibles"
+                   },
+                   {
+                       "sticky_id":  "ACC-BG-03",
+                       "canvas":  "architectural_context",
+                       "section":  "Business goals \u0026 drivers",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-003",
+                       "literal_text":  "Eficiencia operativa"
+                   },
+                   {
+                       "sticky_id":  "ACC-TG-01",
+                       "canvas":  "architectural_context",
+                       "section":  "Technology goals \u0026 drivers",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-ARCHITECTURAL_CONTEXT-016",
+                       "literal_text":  "Reducir errores derivados del registro manual/paralelo"
+                   },
+                   {
+                       "sticky_id":  "ACC-TG-02",
+                       "canvas":  "architectural_context",
+                       "section":  "Technology goals \u0026 drivers",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-ARCHITECTURAL_CONTEXT-017",
+                       "literal_text":  "Eliminar la doble digitación entre POS e inventario"
+                   },
+                   {
+                       "sticky_id":  "ACC-BP-01",
+                       "canvas":  "architectural_context",
+                       "section":  "Business standards \u0026 policies",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-004",
+                       "literal_text":  "Norma Técnica N°147"
+                   },
+                   {
+                       "sticky_id":  "ACC-BP-02",
+                       "canvas":  "architectural_context",
+                       "section":  "Business standards \u0026 policies",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-005",
+                       "literal_text":  "Decreto Supremo N°404, 405, 466"
+                   },
+                   {
+                       "sticky_id":  "ACC-BP-03",
+                       "canvas":  "architectural_context",
+                       "section":  "Business standards \u0026 policies",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-006",
+                       "literal_text":  "Exigencia del ISP de llevar libro de control físico para productos controlados"
+                   },
+                   {
+                       "sticky_id":  "ACC-BP-04",
+                       "canvas":  "architectural_context",
+                       "section":  "Business standards \u0026 policies",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-007",
+                       "literal_text":  "Fiscalización y normativa aplicada por MINSAL, SEREMI, ISP"
+                   },
+                   {
+                       "sticky_id":  "ACC-BP-05",
+                       "canvas":  "architectural_context",
+                       "section":  "Business standards \u0026 policies",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-008",
+                       "literal_text":  "Autorización ISP de destrucción de productos controlados"
+                   },
+                   {
+                       "sticky_id":  "ACC-TP-01",
+                       "canvas":  "architectural_context",
+                       "section":  "Technology standards \u0026 policies",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-ARCHITECTURAL_CONTEXT-018",
+                       "literal_text":  "APIs para que el POS registre transacciones (venta, notas de crédito, entre otras) y consulta stock disponible"
+                   },
+                   {
+                       "sticky_id":  "ACC-SC-01",
+                       "canvas":  "architectural_context",
+                       "section":  "Situational constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-009",
+                       "literal_text":  "Un solo local"
+                   },
+                   {
+                       "sticky_id":  "ACC-SC-02",
+                       "canvas":  "architectural_context",
+                       "section":  "Situational constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-010",
+                       "literal_text":  "Sin integración con proveedores externos"
+                   },
+                   {
+                       "sticky_id":  "ACC-SC-03",
+                       "canvas":  "architectural_context",
+                       "section":  "Situational constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-011",
+                       "literal_text":  "Los registros de transacciones, una vez emitidos, no se pueden modificar ni alterar"
+                   },
+                   {
+                       "sticky_id":  "ACC-SC-04",
+                       "canvas":  "architectural_context",
+                       "section":  "Situational constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-012",
+                       "literal_text":  "Personal no técnico operando el sistema."
+                   },
+                   {
+                       "sticky_id":  "ACC-SC-05",
+                       "canvas":  "architectural_context",
+                       "section":  "Situational constraints",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-013",
+                       "literal_text":  "Autorización ISP y ejecución de destrucción por empresa externa certificada"
+                   },
+                   {
+                       "sticky_id":  "ACC-BPR-01",
+                       "canvas":  "architectural_context",
+                       "section":  "Business principles",
+                       "rule":  "restriccion",
+                       "target":  "fragment",
+                       "target_id":  "NFR-ARCHITECTURAL_CONTEXT-014",
+                       "literal_text":  "Trazabilidad completa de los productos"
+                   },
+                   {
+                       "sticky_id":  "ACC-TPR-01",
+                       "canvas":  "architectural_context",
+                       "section":  "Technical principles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-ARCHITECTURAL_CONTEXT-019",
+                       "literal_text":  "Sistema intuitivo"
+                   },
+                   {
+                       "sticky_id":  "ACC-TPR-02",
+                       "canvas":  "architectural_context",
+                       "section":  "Technical principles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-ARCHITECTURAL_CONTEXT-020",
+                       "literal_text":  "Integridad de los registros"
+                   },
+                   {
+                       "sticky_id":  "ACC-TPR-03",
+                       "canvas":  "architectural_context",
+                       "section":  "Technical principles",
+                       "rule":  "decision_de_plan",
+                       "target":  "plan_context",
+                       "target_id":  "PLAN-ARCHITECTURAL_CONTEXT-021",
+                       "literal_text":  "no alteración de registros de transacciones una vez emitidos."
+                   }
+               ]
+}

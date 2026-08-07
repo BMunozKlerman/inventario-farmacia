@@ -1,0 +1,21 @@
+{
+  "source":"[TDS DIS 2026] Equipo 2.pdf#p3","canvas":"system_context","template":"7Cs v1.1 June 2026","delivery_id":"E1","header":{"system":null,"organization":null,"canvas":null,"version":null,"date":null},
+  "sections":[
+    {"name":"Source users","stickies":[{"id":"SCC-SU-01","text":"QF DT","bbox":[38,147,98,210],"parent":null},{"id":"SCC-SU-02","text":"QF Complementario","bbox":[122,146,234,211],"parent":null},{"id":"SCC-SU-03","text":"Bodeguero","bbox":[122,246,234,311],"parent":null}]},
+    {"name":"User data input interfaces","stickies":[{"id":"SCC-UDI-01","text":"UI WEB (SPA) responsiva","bbox":[569,183,629,245],"parent":null}]},
+    {"name":"User data output interfaces","stickies":[{"id":"SCC-UDO-01","text":"UI WEB (SPA) responsiva","bbox":[1030,187,1090,249],"parent":null}]},
+    {"name":"Target users","stickies":[{"id":"SCC-TU-01","text":"QF DT","bbox":[1507,158,1567,220],"parent":null},{"id":"SCC-TU-02","text":"QF Complementario","bbox":[1590,158,1702,222],"parent":null},{"id":"SCC-TU-03","text":"Bodeguero","bbox":[1590,258,1702,323],"parent":null}]},
+    {"name":"Source systems","stickies":[{"id":"SCC-SS-01","text":"POS","bbox":[47,448,107,508],"parent":null}]},
+    {"name":"System data input interfaces","stickies":[{"id":"SCC-SDI-01","text":"API Transacciones POS","bbox":[557,455,669,519],"parent":null}]},
+    {"name":"System data output interfaces","stickies":[{"id":"SCC-SDO-01","text":"API Consulta Stock POS","bbox":[1040,455,1153,519],"parent":null}]},
+    {"name":"Target systems","stickies":[{"id":"SCC-TS-01","text":"POS","bbox":[1563,459,1675,524],"parent":null}]},
+    {"name":"Source repositories","stickies":[]},
+    {"name":"Repository data input interfaces","stickies":[]},
+    {"name":"Repository data output interfaces","stickies":[{"id":"SCC-RDO-01","text":"Generación de Libro de Controlados","bbox":[1041,708,1153,773],"parent":null}]},
+    {"name":"Target repositories","stickies":[{"id":"SCC-TR-01","text":"Libro físico de productos controlados (ISP)","bbox":[1550,708,1662,773],"parent":null}]},
+    {"name":"Source devices","stickies":[{"id":"SCC-SD-01","text":"Lector de código de barras","bbox":[67,951,179,1016],"parent":null}]},
+    {"name":"Device data input interfaces","stickies":[{"id":"SCC-DDI-01","text":"Lectura de código de barra","bbox":[618,974,730,1039],"parent":null}]},
+    {"name":"Device data output interfaces","stickies":[{"id":"SCC-DDO-01","text":"impresión mensual sobre hojas foliadas/timbradas","bbox":[1041,951,1153,1016],"parent":null},{"id":"SCC-DDO-02","text":"Generación de OC PDF / Excel","bbox":[1190,951,1302,1016],"parent":null}]},
+    {"name":"Target devices","stickies":[]}
+  ],"empty_sections":[]
+}
