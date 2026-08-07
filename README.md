@@ -74,6 +74,10 @@ Para agregar un agente nuevo, añade una entrada a `config/agents.json`:
   rutas al final del prompt para que el agente las lea desde el workspace.
 - `login_check` (opcional): subcomando que debe devolver 0 si hay sesión activa.
 
+Las skills viven en `.agents/skills/` y el pipeline **las inyecta literalmente en el prompt** de cada
+etapa. No dependen del mecanismo de descubrimiento de skills de ningún agente (`.agents/`, `.claude/`,
+etc.), así que basta con que el CLI elegido acepte un prompt y pueda escribir en el workspace.
+
 La autenticación, la cuota y los límites dependen del agente elegido. El proyecto no gestiona
 credenciales ni usa `OPENAI_API_KEY`. El renderizado del PDF ocurre localmente, pero las imágenes se
 procesan mediante el agente; no es inferencia offline.

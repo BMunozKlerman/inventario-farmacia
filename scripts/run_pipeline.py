@@ -14,8 +14,17 @@ from sevencs.agent import AgentNotAvailable, check_login, load_registry, run_pro
 from sevencs.audit import AuditFailed, ClarificationGateClosed, audit
 from sevencs.clarifications import read_open_questions, request_answers
 from sevencs.paths import REPO_ROOT, PathOutsideRepo, repo_path, resolve_pdf
+from sevencs.skills import inline_skills
 
 STAGE_DIRECTORIES = ("evidence", "com", "mapping", "composed", "audit", "clarifications")
+READING_SKILLS = (
+    "7cs-canvas-ingest", "7cs-business-context", "7cs-architectural-context",
+    "7cs-system-context", "7cs-structural", "7cs-functional-A", "7cs-functional-B",
+    "7cs-deployment",
+)
+TRANSFORM_SKILLS = ("7cs-com-transform",)
+COMPOSE_SKILLS = ("7cs-spec-compose",)
+BACKEND_SKILLS = ("7cs-backend-slice",)
 CANVAS_KEYS = (
     "business_context", "architectural_context", "system_context", "structural",
     "functional_front", "functional_back", "deployment",
@@ -95,9 +104,11 @@ def main(argv=None):
     render.find_renderer()
 
     prepare_directories(root, delivery_id, arguments.keep_existing)
+    skills_root = repo_path(root, ".agents/skills")
 
-    def invoke(prompt, images=()):
-        run_prompt(profile, executable, prompt, root, images)
+    def invoke(skills, prompt, images=()):
+        run_prompt(profile, executable, inline_skills(skills_root, skills) + "\n" + prompt,
+                   root, images)
 
     print("[1/7] Renderizando el PDF localmente")
     evidence = repo_path(root, "evidence")
@@ -115,13 +126,13 @@ Escribe siempre clarifications/{delivery}-reading.json con {{"delivery_id":"{del
 No modifiques resources/, .agents/, scripts/, config/, tests/, README.md ni AGENTS.md.""".format(
         delivery=delivery_id, pdf=pdf.name, encoding=ENCODING_RULE
     )
-    invoke(reading_prompt, images)
+    invoke(READING_SKILLS, reading_prompt, images)
     while True:
         pending = read_open_questions(reading_questions)
         if not pending:
             break
         request_answers(answers_path, delivery_id, "reading", pending)
-        invoke(reading_prompt, images)
+        invoke(READING_SKILLS, reading_prompt, images)
 
     print("[3/7] Validando los COM presupuestados")
     validate_budget(root, delivery_id, arguments.budget_path)
@@ -142,16 +153,16 @@ No modifiques resources/, .agents/, scripts/, config/, tests/, README.md ni AGEN
 Escribe siempre clarifications/{delivery}-transformation.json con {{"delivery_id":"{delivery}","phase":"transformation","questions":[]}}. Toda decisión ausente que impida requisitos verificables debe ser una pregunta concreta {{"id","question","reason","status":"open"}} con id estable Q-TRANS-NNN. Analiza cada respuesta contra los COM: marca resolved sólo si es suficiente; si no, mantén open y reformula la pregunta. No inventes. No continúes a composición.""".format(
         delivery=delivery_id, encoding=ENCODING_RULE
     )
-    invoke(transform_prompt)
+    invoke(TRANSFORM_SKILLS, transform_prompt)
     while True:
         pending = read_open_questions(transformation_questions)
         if not pending:
             break
         request_answers(answers_path, delivery_id, "transformation", pending)
-        invoke(transform_prompt)
+        invoke(TRANSFORM_SKILLS, transform_prompt)
 
     print("[5/7] Componiendo el entregable")
-    invoke("""Compone el delivery '{delivery}' mediante 7cs-spec-compose. Lee sólo mapping/{delivery}-*, clarifications/{delivery}-transformation.json y clarifications/{delivery}-answers.json. {encoding} Verifica que no existan preguntas open; si existe alguna, falla sin escribir composed/. Si la compuerta está cerrada, genera todos los artefactos composed/{delivery}-* y déjalos listos para 7cs-spec-audit. No leas el PDF ni evidence/.""".format(
+    invoke(COMPOSE_SKILLS, """Compone el delivery '{delivery}' mediante 7cs-spec-compose. Lee sólo mapping/{delivery}-*, clarifications/{delivery}-transformation.json y clarifications/{delivery}-answers.json. {encoding} Verifica que no existan preguntas open; si existe alguna, falla sin escribir composed/. Si la compuerta está cerrada, genera todos los artefactos composed/{delivery}-* y déjalos listos para 7cs-spec-audit. No leas el PDF ni evidence/.""".format(
         delivery=delivery_id, encoding=ENCODING_RULE
     ))
 
@@ -170,7 +181,7 @@ Escribe siempre clarifications/{delivery}-transformation.json con {{"delivery_id
         return 1
 
     print("[7/7] Generando un slice backend ejecutable")
-    invoke("""Usa 7cs-backend-slice para el delivery '{delivery}'. Selecciona exactamente un post-it Functional Back con contrato suficiente y genera un único bundle bajo implementation/{delivery}/backend-<capability>/. Debe incluir código fuente Node.js, pruebas sin dependencias innecesarias, Dockerfile, lanzadores multiplataforma run.sh y run.bat, README.md y traceability.json. Implementa solamente esa funcionalidad; no vuelvas al PDF, no cambies COM, mapping, composed ni clarifications y no generes frontend.""".format(
+    invoke(BACKEND_SKILLS, """Usa 7cs-backend-slice para el delivery '{delivery}'. Selecciona exactamente un post-it Functional Back con contrato suficiente y genera un único bundle bajo implementation/{delivery}/backend-<capability>/. Debe incluir código fuente Node.js, pruebas sin dependencias innecesarias, Dockerfile, lanzadores multiplataforma run.sh y run.bat, README.md y traceability.json. Implementa solamente esa funcionalidad; no vuelvas al PDF, no cambies COM, mapping, composed ni clarifications y no generes frontend.""".format(
         delivery=delivery_id
     ))
     print("Pipeline completo: PASS")
